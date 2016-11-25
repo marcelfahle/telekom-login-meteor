@@ -1,0 +1,103 @@
+@import "{}/client/styles/_variables";
+@import "{}/client/styles/_typography";
+
+.faqs {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  @include breakpoint( $mob6 ) {
+    width: 76.4%;
+  }
+}
+.faq__wrapper {
+  margin-bottom: 70px;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    color: white;
+    display: inline-block;
+    background: $magenta url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAAAJ1JREFUWAnt2EEKwCAMRNHa+9/Z2u0sHCEjKHx3wZjKiy3U9oRGH2NWqo0xm1+de1cTT8ljw7s7gTDCIsCREJB4iHCcVAoiLCDxEOE4qRREWEDi4XXCzf0pxImKBa8TZsPFjtvlCFuiYgLCRUC7PHIb8z/Ffc+5+bG9OCSBl253IxBGWAQ4EgISDxGOk0pBhAUkHiIcJ5WCCAtIPPwAAhwMUvO6NkEAAAAASUVORK5CYII=') center no-repeat;
+    background-size: 22px 22px;
+    border-radius: 4px;
+    width: rem(36px);
+    height: rem(36px);
+
+    font-size: rem(82px);
+    line-height: rem(17px);
+    text-align: center;
+  }
+  dd {
+    display: none;
+  }
+}
+.faq__wrapper.open {
+  &:before {
+    background: $magenta url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAICAYAAACVm43oAAAABGdBTUEAALGPC/xhBQAAACRJREFUOBFj/A8EDIMQMA1CN4GdNOowUmNmNMRGQ4zUECBVPQAvDwQMSqxSrgAAAABJRU5ErkJggg==') center no-repeat;
+    background-size: 16px 4px;
+  }
+  dd {
+    display: block;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $border-color2;
+  }
+}
+.faq__title {
+  @include dl-header;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  padding-left: 50px;
+  padding-bottom: 13px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid $border-color2;
+}
+.faq__body {
+  p {
+    @include copy;
+    margin-bottom: 22px;
+    strong {
+      font-weight: 700;
+    }
+    a {
+      @include button;
+      @include button-gray;
+      @include button-small;
+    }
+  }
+  h3 {
+    @include h3; 
+    margin-bottom: 22px;
+  }
+  ol {
+    margin-bottom: 22px;
+    counter-reset: li;
+  }
+  ol li {
+    @include copy;
+    position: relative;
+    margin-bottom: 1.5em;
+    padding-left: 34px;
+    &:before {
+      display: inline-block;
+      text-align: center;
+      position: absolute;
+      margin-top: 4px;
+      left: 0;
+      content:counter(li);
+      counter-increment:li;
+      color: #fff;
+      background-color: $magenta;
+      border-radius: 12px;
+      width: 24px;
+      height: 24px;
+      font-weight: 800;
+      @include fontSize( 19px );
+      line-height: 1.566;
+      @include breakpoint( $mob6 ) {
+        line-height: 1.266;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,95 @@
+{
+  "funktionen" : {
+    "bullet1color" : "#ffffff",
+    "bullet1copy" : "Mit dem Telekom Login empfangen Sie MobileTV im heimischen WLAN genauso selbstverständlich wie unterwegs im Funknetz. Und auf Ihr gebuchtes Entertain-Paket greifen Sie sogar über die Set-Top-Box eines Freundes zu. Einfach einloggen und Sie sind zu Hause.",
+    "bullet1head" : "Alle Telekom Produkte jederzeit und überall",
+    "bullet2color" : "#F8F8F8",
+    "bullet2copy" : "Mit Entertain schützen Sie Kinder vor jugendgefährdenden Inhalten. Denn Fernsehangebote mit einer Alterskennung ab 16 Jahren müssen mit einer Benutzer-PIN freigeben werden – in der Set-Top-Box und auch in der MobileTV-App. Eine neue Benutzer-PIN vergeben oder ändern Sie bequem in den Login Einstellungen.",
+    "bullet2head" : "Jugendschutz bei Entertain stärken: Mit der Benutzer-Pin",
+    "title" : "Einfach besser, weil er immer besser wird",
+    "titlecopy" : "Wir erweitern den Telekom Login ständig um nützliche Funktionen, damit die Online-Welt einfach selbstverständlicher für Sie wird. Erwarten Sie mehr Extras, mehr Vorteile, mehr Möglichkeiten – jetzt, und in Zukunft."
+  },
+  "home" : {
+    "bullet1copy" : "Mühseliges Einprägen unterschiedlicher Zugangsdaten ist jetzt Geschichte. Sie benötigen nur noch ein Passwort für Ihre Online-Angebote der Telekom.",
+    "bullet1head" : "Einfach bequem",
+    "bullet2copy" : "Einmal eingeloggt ist überall eingeloggt, egal auf welchem Endgerät. Sie wechseln zwischen den Diensten ganz einfach per Klick, ohne erneut Ihr Passwort einzugeben.",
+    "bullet2head" : "Einfach flexibel",
+    "bullet3copy" : "Ihre Zugangsdaten liegen zu 100% in unserem Rechenzentrum in Deutschland – und das mit den höchsten Sicherheitsstandards und nach deutschem Datenschutzrecht.",
+    "bullet3head" : "Einfach sicher",
+    "servicescopy" : "Ganz egal welchen unserer Dienste Sie nutzen möchten: Mit der Übersicht sind Sie schneller am Ziel – und eingeloggt.",
+    "serviceshead" : "Alle Telekom Dienste im Überblick",
+    "title" : "Ein Login für Ihre Telekom Dienste",
+    "titlecopy" : "Ob mit Computer, Tablet oder Smartphone: Mit dem Telekom Login nutzen Sie Ihre Telekom Dienste schnell, bequem und einfach sicherer."
+  },
+  "sogehts" : {
+    "faqlist" : [ {
+      "content" : "Als Festnetz-Kunde haben Sie bereits einen Telekom Login. Die Zugangsdaten entnehmen Sie Ihrem Starter-Paket. Sie bestehen aus **T-Online Nummer** und **Persönlichem Kennwort**. Sobald Sie sich das erste Mal einloggen, können Sie Benutzername und Kennwort nach Wunsch ändern.  \n### Benutzername und Kennwort ändern:  \n1. Halten Sie T-Online Nummer und Persönliches Kennwort bereit \n2. Loggen Sie sich im Kundencenter Festnetz ein \n3. Folgen Sie dem Einrichtungsassistenten, um Benutzername und Kennwort nach Wunsch zu ändern – fertig!  \n\n[Zum Kundencenter Festnetz](//telekom.com)",
+      "title" : "Erstmalig als Festnetz-Kunde einloggen"
+    }, {
+      "content" : "Als Mobilfunk-Kunde ohne Festnetzanschluss registrieren Sie sich zunächst für den Telekom Login. Anschließend können Sie Ihren Mobilfunk-Vertrag mit Ihrem neuen Login verknüpfen, damit Sie auch das Kundencenter Mobilfunk bequem per Telekom Login erreichen. Unser Formular leitet Sie durch alle Schritte.  \n\n[Zum Registrierungsformular](//telekom.com)",
+      "title" : "Als Mobilfunk-Kunde registrieren"
+    }, {
+      "content" : "Sie haben verschiedene Logins für das Kundencenter Festnetz und Mobilfunk? Verknüpfen Sie einfach beide Kundencenter mit Ihrem Telekom Login, damit Sie in Zukunft nur noch ein Passwort benötigen.  \n### Kundencenter Festnetz oder Mobilfunk verknüpfen:  \n1. Loggen Sie sich im Kundencenter ein \n2. Klicken Sie auf den Link: <br>„Sie haben einen Telekom Festnetzanschluss/Mobilfunkanschluss und dieser soll hier erscheinen?“ \n3. Folgen Sie der Schritt-für-Schritt-Anleitung  \n\n[Zum Kundencenter](//telekom.com)",
+      "title" : "Mehrere Logins zusammenführen "
+    }, {
+      "content" : "Wenn Sie einmal Ihr Passwort vergessen haben, vergeben Sie mit dem Telekom Login schnell und sicher ein Neues.  \n\n[Passwort zurücksetzen](//telekom.com)  \n\n### Gehen Sie auf Nummer sicher  \nHinterlegen Sie eine Sicherheitsfrage, eine zweite E-Mail-Adresse oder Ihr Geburtsdatum für eine noch sichere Passwort-Wiederherstellung. Alle Sicherheits-Merkmale verwalten Sie zentral in den Login Einstellungen.  \n\n[Button Sicherheits-Merkmale festlegen](//telekom.com)",
+      "title" : "Passwort zurücksetzen"
+    } ],
+    "title" : "So geht’s: <br>Registrieren, einloggen und optimal anpassen"
+  },
+  "dienste": {
+    "telekom": [
+      {
+        "title": "Kundencenter",
+        "description": "Im Telekom Kundencenter verwalten Sie bequem Ihre Verträge und Anschlüsse.",
+        "icon": "/images/icon-kundencenter.png",
+        "featured": true
+      },
+      {
+        "title": "Kundencenter",
+        "description": "Im Telekom Kundencenter verwalten Sie bequem Ihre Verträge und Anschlüsse.",
+        "icon": "/images/icon-kundencenter.png",
+        "featured": true
+      },
+      {
+        "title": "Kundencenter",
+        "description": "Im Telekom Kundencenter verwalten Sie bequem Ihre Verträge und Anschlüsse.",
+        "icon": "/images/icon-kundencenter.png",
+        "featured": true
+      },
+      {
+        "title": "Kundencenter",
+        "description": "Im Telekom Kundencenter verwalten Sie bequem Ihre Verträge und Anschlüsse.",
+        "icon": "/images/icon-kundencenter.png",
+        "featured": true
+      },
+      {
+        "title": "Kundencenter",
+        "description": "Im Telekom Kundencenter verwalten Sie bequem Ihre Verträge und Anschlüsse.",
+        "icon": "/images/icon-kundencenter.png",
+        "featured": true
+      }
+    ],
+    "partners": [
+      {
+        "title": "Kundencenter",
+        "description": "Im Telekom Kundencenter verwalten Sie bequem Ihre Verträge und Anschlüsse.",
+        "icon": "/images/icon-kundencenter.png",
+        "featured": true
+      },
+      {
+        "title": "Kundencenter",
+        "description": "Im Telekom Kundencenter verwalten Sie bequem Ihre Verträge und Anschlüsse.",
+        "icon": "/images/icon-kundencenter.png",
+        "featured": true
+      },
+      {
+        "title": "Kundencenter",
+        "description": "Im Telekom Kundencenter verwalten Sie bequem Ihre Verträge und Anschlüsse.",
+        "icon": "/images/icon-kundencenter.png",
+        "featured": true
+      }
+
+    ]
+  }
+}

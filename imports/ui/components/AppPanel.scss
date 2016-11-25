@@ -1,0 +1,72 @@
+@import "{}/client/styles/_variables";
+@import "{}/client/styles/_typography";
+
+
+
+.app-panel {
+  display: none;
+  overfloW: hidden;
+  width: 296px;
+  //height: 272px;
+  position: absolute;
+  z-index: 1000;
+  top: 145px;
+  right: 0;
+  @include content-margin(right);
+  background: #fff;
+  border: 1px solid #b2b2b2;
+  border-radius: 6px;
+  @include breakpoint( $mob3 ) {
+    width: 370px;
+  }
+}
+// active state
+.show-app-panel .app-panel { display: inline-block; }
+.show-app-panel .header__nav--icon-menu .app-link { 
+  background-color: #ededed;
+  border-radius: 4px;
+}
+// mob4
+.app-panel__more-link {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  line-height: 43px;
+  text-align: center;
+  background: $border-color;
+  a {
+    font-weight: 700;
+    cursor: pointer; 
+  }
+  @include breakpoint( $mob3 ) {
+    line-height: 53px;
+  }
+}
+.app-panel__apps {
+  padding-top: 38px;
+  margin-bottom: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-content: flex-end;
+}
+.app-panel__app {
+  width: 90px;
+  margin-bottom: 25px;
+  text-align: center;
+  a {
+    font-weight: 700;
+    cursor: pointer;
+  }
+  img {
+    display: inline-block;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    @include icon-size;
+  }
+  @include breakpoint( $mob3 ) {
+    width: 100px;
+  }
+}
+

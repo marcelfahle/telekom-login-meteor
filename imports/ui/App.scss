@@ -1,0 +1,54 @@
+@import '{}/node_modules/reset-css/reset';
+@import '{}/client/styles/_variables';
+@import '{}/client/styles/_typography';
+
+html {
+  //font-size: 1.375em;
+  font-size: 13px;
+  @include breakpoint( $mob4 ) {
+    font-size: 14px;
+  }
+  @include breakpoint( $tab1 ) {
+    font-size: 15px;
+  }
+  @include breakpoint( $des3 ) {
+    font-size: 16px;
+  }
+  @include breakpoint( $des4 ) {
+    //font-size: 18px;
+  }
+  @include breakpoint( $des6 ) {
+    //font-size: 20px;
+  }
+}
+body {
+  font-size: 1em;
+  font-family: 'TeleGroteskScreen';
+  font-weight: 400;
+  min-width: 320px;
+}
+main { font-size: 0; } // inline-block white-space hack
+h1, h2, h3, h4, p, li {
+  color: $gray;
+}
+p, li { font-size: 1rem; }
+button { 
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button; /* for input */
+  -webkit-user-select: none; /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+
+
+
+
+

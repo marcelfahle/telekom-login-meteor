@@ -1,0 +1,10 @@
+@import "{}/client/styles/_variables";
+@import "{}/client/styles/_typography";
+
+
+.dienste {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-end;
+}
+

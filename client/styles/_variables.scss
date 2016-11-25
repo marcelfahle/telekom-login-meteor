@@ -1,0 +1,158 @@
+@import '{}/node_modules/breakpoint-sass/stylesheets/_breakpoint';
+
+
+// BREAKPOINTS
+$mob1: 320px;
+$mob2: 360px;
+$mob2b: 410px; // iphone 6 plus 414
+$mob3: 420px;
+$mob4: 480px;
+$mob5: 550px;
+$mob6: 640px;
+
+$tab1: 720px;
+$tab2: 780px;
+$tab3: 840px;
+$tab4: 920px;
+$tab5: 960px;
+
+$des1: 1020px;
+$des2: 1080px;
+$des3: 1260px;
+$des4: 1500px;
+
+$des5: 1680px;
+$des6: 1920px;
+
+
+$maxContentWidth: 1360px; // + the padding that gets added, so 1440 max
+$maxVisualsWidth: 1920px;
+
+
+
+// COLORS
+$magenta: #e20074;
+$blue: #34C0F3;
+$blue2: #007EB1;
+$blue3: #E4F5FD;
+$footertextgray: #a4a4a4;
+$gray: #383838;
+$border-color: #ededed;
+$border-color2: #d0d0d0;
+$border-color3: #b2b2b2;
+$graybg: #f8f8f8;
+
+
+
+// MEASUREMENTS
+$paddingAt1: $mob1;
+$paddingAt2: $mob4; // 480
+$paddingAt3: $mob6; // 640
+$paddingAt4: $tab5; // 960
+
+$content-space: 40px;
+
+
+@function rem($size) {
+  //$remSize: $size / 16px;
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: rem($size);
+}
+
+
+
+@mixin content-padding($side: both) {
+  @if $side == left {
+    padding-left: $content-space / 4;
+    @include breakpoint ( $paddingAt3 ) {
+      padding-left: $content-space / 2;
+    }
+    @include breakpoint ( $paddingAt4 ) {
+      padding-left: $content-space;
+    }
+  }
+  @else if $side == right {
+    padding-right: $content-space / 4;
+    @include breakpoint ( $paddingAt3 ) {
+      padding-right: $content-space / 2;
+    }
+    @include breakpoint ( $paddingAt4 ) {
+      padding-right: $content-space;
+    }
+  }
+  @else {
+    padding-left: $content-space / 4;
+    padding-right: $content-space / 4;
+    @include breakpoint ( $paddingAt3 ) {
+      padding-left: $content-space / 2;
+      padding-right: $content-space / 2;
+    }
+    @include breakpoint ( $paddingAt4 ) {
+      padding-left: $content-space;
+      padding-right: $content-space;
+    }
+  }
+}
+@mixin content-margin($side: both) {
+  @if $side == left {
+    margin-left: $content-space / 4;
+    @include breakpoint ( $paddingAt3 ) {
+      margin-left: $content-space / 2;
+    }
+    @include breakpoint ( $paddingAt4 ) {
+      margin-left: $content-space;
+    }
+  }
+  @else if $side == right {
+    margin-right: $content-space / 4;
+    @include breakpoint ( $paddingAt3 ) {
+      margin-right: $content-space / 2;
+    }
+    @include breakpoint ( $paddingAt4 ) {
+      margin-right: $content-space;
+    }
+  }
+  @else {
+    margin-left: $content-space / 4;
+    margin-right: $content-space / 4;
+    @include breakpoint ( $paddingAt3 ) {
+      margin-left: $content-space / 2;
+      margin-right: $content-space / 2;
+    }
+    @include breakpoint ( $paddingAt4 ) {
+      margin-left: $content-space;
+      margin-right: $content-space;
+    }
+  }
+}
+
+@mixin icon-size {
+  width: 40px;
+  height: 40px;
+  @include breakpoint( $mob3 ) {
+    width: 51px;
+    height: 51px;
+  }
+}
+
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

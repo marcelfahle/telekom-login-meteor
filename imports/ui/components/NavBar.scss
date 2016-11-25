@@ -1,0 +1,239 @@
+@import '{}/client/styles/_variables';
+@import '{}/node_modules/breakpoint-sass/stylesheets/_breakpoint';
+
+
+.header__nav {
+  position: relative;
+  height: 72px;
+  line-height: 72px;
+  border-bottom: 1px solid $border-color;
+}
+.header__nav--menu-toggle {
+  display: inline;
+  //width: 20px;
+  //height: 23px;
+  position: absolute;
+  top: 19px;
+  width: 36px;
+  height: 36px;
+  margin-right: 30px;
+  padding: 8px 4px;
+  background: transparent url('/images/icon-menu.svg') center no-repeat;
+  cursor: pointer;
+
+  &:hover, &:active {
+    background-color: $border-color; 
+    border-radius: 4px;
+  }
+}
+header.menu .header__nav--menu-toggle {
+  background: transparent url('/images/icon-menu-close.svg') center no-repeat;
+  background-size: 19px 19px;
+  &:hover, &:active {
+    background-color: $border-color; 
+    border-radius: 4px;
+  }
+}
+
+
+
+.header__nav--breadcrumbs {
+  display: none;
+  margin-left: 58px;
+  line-height: 72px;
+  font-size: 22px;
+  @include breakpoint( $mob6 ) {
+    display: inline-block;
+  }
+}
+
+
+// MENU
+.header__main-menu {
+  display: none;
+}
+header.menu .header__main-menu {
+  display: block;
+  position: absolute;
+  z-index: 4000;
+  background: #fff;
+  top: rem(72px);
+  margin-top: 1px;
+  border-bottom: 1px solid $border-color;
+
+  width: 100vw;
+
+  .content-wrapper { 
+    padding-left: 0;
+    padding-right: 0;
+  }
+  ul {
+  } 
+  li {
+    @include fontSize( 21px );
+    margin-left: -40px;
+    padding-left: 40px;
+    //width: calc(100% + 40px);
+    width: calc(100%);
+    a {
+      @include content-padding;
+      @include breakpoint(1440px) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+    }
+    a:hover, a:active {
+      color: $gray;
+    }
+    &:hover {
+      background: $border-color;
+    }
+  }
+}
+
+
+@mixin link-button {
+  margin-top: 21px;
+  display: inline-block;
+  &:hover, &:active {
+    background-color: $border-color; 
+    border-radius: 4px;
+  }
+  padding-left: 8px;
+  padding-right: 8px;
+
+  height: 30px;
+  text-align: center;
+  position: relative;
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  @include breakpoint( $mob4 ) {
+    margin-top: 18px;
+    //width: 36px;
+    height: 36px;
+    margin-bottom: -12px;
+  }
+}
+
+
+
+.header__nav--icon-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  @include content-padding(right);
+  height: 72px;
+  .button-login {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    padding: 0;
+    top: -1px;
+    text-align: center;
+    line-height: 34px;
+    @include breakpoint( $mob4 ) {
+      height: 34px;
+      width: auto;
+      padding-left: rem(24px);
+      padding-right: rem(24px);
+    }
+    @include breakpoint( $mob6 ) {
+      padding-left: 14px;
+      padding-right: 24px;
+    }
+    img { 
+      top: 5px;
+      position: absolute;
+      left: 5px;
+      width: 18px;
+      height: 17px;
+      @include breakpoint( $mob4 ) {
+        left: auto;
+        margin-left: -2px; 
+        width: 22px;
+        height: 20px;
+      }
+      @include breakpoint( $mob6 ) {
+
+      }
+    }
+    span {
+      margin-left: 34px;
+      margin-right: 4px;
+      display: none;
+      @include breakpoint( $mob4 ) {
+        display: inline;
+        //margin-left: 54px;
+        margin-right:4px;
+      }
+    }
+  }
+  a {
+    margin-right: 10px;
+    line-height: 34px;
+    @include breakpoint( $mob4 ) {
+    }
+    &:hover, &:active {
+      color: $gray;
+    }
+    &:last-child {
+      margin-right: 0px;
+      position: relative;
+      vertical-align: top;
+      //@include fontSize(18px);
+      line-height: 36px;
+      @include breakpoint( $mob4 ) {
+        //margin-right: 0;
+
+      }
+    }
+  }
+  a:not(.button) {
+    @include link-button;
+    @include breakpoint( $mob4 ) {
+      //padding-left: 4px;
+      //padding-right: 4px;
+    }
+  }
+}
+
+.app-link {
+  width: 19px;
+  img {
+    width: 13px;
+    height: auto;
+    @include breakpoint( $mob4 ) {
+      width: 16px;
+      height: auto;
+    }
+  }
+}
+.help-link {
+  width: 15px;
+  img {
+    width: 7px;
+    height: auto;
+    @include breakpoint( $mob4 ) {
+      width: 8px;
+      height: auto;
+    }
+  }
+}
+.lang-link {
+  font-size: 14px;
+  width: 20px;
+  height: auto;
+  line-height: 30px !important;
+  @include breakpoint( $mob4 ) {
+    width: 24px;
+    height: auto;
+    font-size: 18px !important;
+    line-height: 36px !important;
+  }
+}
+

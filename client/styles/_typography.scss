@@ -1,0 +1,208 @@
+@import './_variables';
+@import './_fonts';
+@import '{}/node_modules/breakpoint-sass/stylesheets/_breakpoint';
+
+@mixin copy {
+  font-family: "TeleGroteskScreen";
+  font-weight: 400;
+  @include fontSize( 22px );
+  line-height: 1.545;
+}
+
+@mixin copyfooter {
+  font-family: "TeleGroteskScreen";
+  font-weight: 600;
+  @include fontSize( 22px );
+  line-height: 1.545;
+}
+
+@mixin metafooter {
+  font-family: "TeleGroteskScreen";
+  font-weight: 400;
+  @include fontSize( 14px );
+  line-height: 1.1;
+}
+
+@mixin h1 {
+  font-family: "TeleGroteskScreen";
+  font-weight: 800;
+  @include fontSize( 50px );
+  line-height: 1.08;
+  letter-spacing: 0.7px;
+}
+@mixin h1-underlined {
+  color: $gray;
+  font-family: "TeleGroteskScreen";
+  font-weight: 700;
+  @include fontSize( 19px );
+  line-height: 1.08;
+  letter-spacing: 0.7px;
+}
+
+@mixin h2 {
+  font-family: "TeleGroteskScreen";
+  font-weight: 600;
+  @include fontSize( 30px );
+  line-height: 1;
+  letter-spacing: 0.7px;
+  margin-bottom: 0.68rem;
+}
+
+@mixin h2bold {
+  font-family: "TeleGroteskScreen";
+  font-weight: 800;
+  @include fontSize( 30px );
+  line-height: 1;
+  letter-spacing: 0.7px;
+  margin-bottom: 0.68rem;
+}
+
+@mixin h3 {
+  color: $gray;
+  font-family: "TeleGroteskScreen";
+  font-weight: 800;
+  @include fontSize( 30px );
+  line-height: 1;
+  letter-spacing: 0.7px;
+}
+
+@mixin header-copy {
+  font-family: "TeleGroteskScreen";
+  font-weight: 400;
+  @include fontSize( 28px );
+  line-height: 1.214;
+  letter-spacing: 0.7px;
+}
+
+
+@mixin hero-display {
+  font-family: "TeleGroteskScreen";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1;
+  color: #fff;
+  span { font-family: "TeleGroteskScreen"; font-weight: 800; }
+
+  @include breakpoint( $mob3 ) {
+    font-size: 32px;
+  }
+  @include breakpoint( $des1 ) {
+    font-size: 45px;
+  }
+}
+
+
+@mixin dl-header {
+  color: $gray;
+  font-family: "TeleGroteskScreen";
+  font-weight: 500;
+  @include fontSize( 30px );
+  line-height: 1.2em;
+}
+@mixin dl-copy {
+
+}
+
+@mixin list-copy {
+  color: $gray;
+  font-family: "TeleGroteskScreen";
+  font-weight: 500;
+  @include fontSize( 19px );
+  line-height: 1.2em;
+
+}
+
+
+
+
+a { text-decoration: none; }
+a:link, a:visited {
+  color: $gray; 
+}
+a:hover, a:active {
+  color: $magenta;
+}
+
+
+.title--center {
+  @include h1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.title--underlined {
+  @include h1-underlined;
+  border-bottom: 1px solid $border-color2;
+  text-align: left;
+  padding-top: rem(56px);
+  padding-bottom: rem(13px);
+  margin-bottom: rem(36px);
+}
+.title__copy {
+  @include header-copy;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  @include breakpoint( $tab1 ) {
+    max-width: 70%;
+  }
+}
+
+
+
+
+/* buttons */
+@mixin button {
+  display: inline-block;
+  height: rem(50px);
+  border-radius: 4.665599660110471px;
+  padding-left: rem(34px);
+  padding-right: rem(34px);
+  @include fontSize(22px);
+  line-height: rem(50px);
+  text-decoration: none;
+  color: $gray;
+  &:hover, &:active {
+    color: $gray;
+  }
+}
+
+@mixin button-gray {
+  background-color: #ededed;
+  border: 1px solid #b2b2b2;
+  color: $gray;
+  &:hover, &:active {
+    color: $gray;
+  }
+}
+
+@mixin button-magenta {
+  background-color: $magenta;
+  border: 1px solid #cc0069;
+  color: #fff !important;
+}
+
+@mixin button-small {
+  height: rem(36px);
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  @include fontSize(18px);
+  line-height: rem(36px);
+}
+
+
+// leaving this in for backwardas compatibillity, as I used
+// classes before.
+.button {
+  @include button;
+}
+.button-gray {
+  @include button-gray;
+}
+.button-magenta {
+  @include button-magenta;
+}
+.button-small {
+  @include button-small;
+}
+
+

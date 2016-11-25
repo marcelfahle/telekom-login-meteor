@@ -1,0 +1,210 @@
+@import "{}/client/styles/_variables";
+@import "{}/client/styles/_typography";
+
+.hero {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  //margin-bottom: -5px;
+  overflow: hidden;
+
+  // shows the semi transparent box in full-width mode
+  //padding-bottom: 20px;
+  @include breakpoint( $mob6 ) {
+    padding-bottom: 0;
+  }
+}
+
+.content-wrapper__hero {
+  @include content-padding;
+  // overwrite - should be in MQ
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hero__image--wrapper {
+  position: relative;
+  background-size: cover;
+  background-position: right top;
+  max-width: $maxVisualsWidth;
+  margin-left: auto;
+  margin-right: auto;
+  // 16:5
+  @include aspect-ratio(16, 10);
+  @include breakpoint( $mob4 ) {
+    @include aspect-ratio(16, 9);
+  }
+  @include breakpoint( $tab1 ) {
+    background-position: center;
+  }
+  @include breakpoint( $tab3 ) {
+    @include aspect-ratio(16, 7);
+  }
+  &.aspect16-5plus {
+    @include breakpoint( $des3 ) {
+      @include aspect-ratio(16, 5.5);
+    }
+  }
+  &.aspect16-7 {
+    @include breakpoint( $des3 ) {
+      @include aspect-ratio(16, 7);
+    }
+  }
+  &.aspect16-5 {
+    @include breakpoint( $des3 ) {
+      @include aspect-ratio(16, 5);
+    }
+  }
+}
+.hero__image {
+  //display: block;
+  ////position: absolute;
+  ////width: 100%;
+  //height: 100%;
+  //top: 0;
+  //right: -10px;
+
+  ////height: 220px;
+  ////margin-left: 50%;
+  ////transform: translateX(-60%);
+  //@include breakpoint( $paddingAt2 ) {
+  //  right: -20px;
+  //}
+  //@include breakpoint( $paddingAt3 ) {
+  //  left: -40%;
+  //  right: auto;
+  //}
+  //@include breakpoint( $tab3 ) {
+  //  left: -40px;
+
+  //}
+  //@include breakpoint( $paddingAt4 ) {
+  //  left: -40px;
+  //}
+  //@include breakpoint( $des3 ) {
+  //  width: calc(100% + 80px);
+  //  height: auto;
+  //}
+} 
+.content-wrapper__hero .hero__image--wrapper.aspect16-7 {
+  @include breakpoint( $paddingAt3 ) {
+    @include aspect-ratio(16, 7);
+  }
+  .hero__image {
+    @include breakpoint( $paddingAt3 ) {
+      left: -40px;
+      width: calc(100% + 80px);
+      height: auto;
+    }
+    @include breakpoint( $paddingAt4 ) {
+      left: -40px;
+    }
+  }
+}
+
+.hero__display {
+  z-index: 5;
+  background: $magenta;
+  position: relative;
+
+
+  //left: $content-space;
+  
+  //margin-top: 220px;
+  margin-left: -10px;
+
+  width: calc(100% - 0.522em);
+
+  @include hero-display;
+
+  padding-top: 0.422em;
+  padding-left: 0.578em;
+  padding-bottom: 0.578em;
+  padding-right: 0.522em;
+  @include breakpoint( $mob4 ) {
+    //margin-left: -20px;
+  }
+  @include breakpoint( $tab1 ) {
+    position: absolute;
+    top: 0;
+    margin-top: 5%;
+    margin-left: auto;
+    max-width: 540px;
+    width: auto;
+    margin-right: 120px;
+  }
+  @include breakpoint( $mob6 ) {
+  }
+
+
+
+  &:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    z-index: -4;
+    width: 100%;
+    height: calc(100% + 20px);
+    top: -20px;
+    left: 0;
+    opacity: .5;
+    background: $magenta;
+    @include breakpoint( $tab1 ) {
+      top: 0;
+      width: calc(100% + 30px);
+    }
+  }
+  &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    z-index: -3;
+    width: 100%;
+    height: calc(100% - 30px);
+    top: 0;
+    left: 0;
+    opacity: .5;
+    background: $magenta;
+    @include breakpoint( $mob4 ) {
+      width: calc(100% + 60px);
+    }
+  }
+
+
+
+  .button {
+    @include fontSize (22px)
+    padding-left: rem(20px);
+    padding-right: rem(20px);
+  }
+}
+.hero-cta {
+  padding-top: rem(16px);
+}
+
+.last-action-hero {
+  padding-bottom: 0;
+}
+
+
+
+
+.hero__display--wrapper {
+  z-index: 10;
+  max-width: $maxContentWidth;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translateX( -50% );
+  @include breakpoint( $tab1 ) {
+    position: absolute; 
+    width: calc(100% - 40px);
+    top: 0;
+
+  }
+  @include breakpoint( $tab5 ) {
+    width: calc(100% - 80px);
+    
+  }
+}
+

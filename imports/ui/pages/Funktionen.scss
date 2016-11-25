@@ -1,0 +1,80 @@
+@import "{}/client/styles/_variables";
+@import "{}/client/styles/_typography";
+
+.funktionen__intro {
+  padding-top: 70px;
+  margin-bottom: 100px;
+}
+
+
+.funktionen__functions-list {
+}
+.function {
+  padding-top: rem(40px);
+  padding-bottom: rem(40px);
+  @include breakpoint( $mob6 ) {
+    padding-top: rem(70px);
+    padding-bottom: rem(70px);
+  }
+}
+.function.graybg {
+  background: $graybg;
+}
+.function__img {
+  text-align: center;
+  margin-bottom: rem(40px);
+  @include breakpoint( $mob6 ) {
+    display: inline-block;
+    width: 48%; 
+    text-align: center;
+  }
+  img {
+    max-width: 80%;
+  }
+}
+.function__copy {
+  text-align: center;
+  padding-right: 1rem;
+  @include breakpoint( $mob6 ) {
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(52% - 1rem);
+  }
+  h2 {
+    @include h2bold;
+    margin-bottom: 15px;
+  }
+  p {
+    @include copy;
+  }
+}
+
+  
+.login-settings {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  
+}
+.login-settings__img {
+  text-align: center;
+  margin-bottom: 58px;
+  img {
+    margin: 0 auto;
+    max-width: 480px;
+    width: 90%;
+  }
+}
+.login-settings__copy {
+  text-align: center;
+  h2 {
+    @include h2bold;
+  }
+  p {
+    @include copy;
+    max-width: 630px; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h2 + p { margin-bottom: 30px; }
+}

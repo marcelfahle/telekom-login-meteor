@@ -1,0 +1,110 @@
+@import "{}/client/styles/_variables";
+@import "{}/client/styles/_typography";
+
+.sogehts {
+}
+.sogehts__intro {
+  padding-top: 70px;
+  margin-bottom: 100px;
+}
+.sogehts__faqs {
+}
+.faqs {
+
+}
+
+
+.services__slider {
+  position: relative;
+  max-height: 65.5%;
+  background-image: linear-gradient(180deg, white 0%, #f3f3f3 51%, #e6e6e6 100%);
+
+  ul li {
+    text-align: center;
+    h2 {
+    }
+    p {
+      margin-bottom: rem(50px);
+      a { 
+        @include button;
+        @include button-gray;
+      }
+    }
+
+    img {
+      max-width: 750px;
+      width: 90%;
+      margin-bottom: rem(100px);
+    }
+  }
+}
+
+.services__slider-controls {
+
+  display: none !important;
+
+  position: absolute;
+  top: 55%;
+  max-width: 64.24%;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  a {
+    width: 42px;
+    height: 83px;
+    position: absolute;
+    top: 0;
+  }
+}
+.slider__controls--next {
+  right: 0;
+  img {
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
+}
+
+
+
+.telekom-hilft {
+  text-align: center;
+  padding-bottom: rem(62px);
+  > img {
+    width: 100px;
+    margin-top: rem(58px);
+    margin-bottom: rem(38px);
+  }
+}
+.telekom-hilft__links {
+  padding-top: rem(42px);
+
+}
+.telekom-hilft__links--fb,
+.telekom-hilft__links--tw {
+  @include copy;
+  padding-left: 30px;
+  margin-left: 22px;
+  margin-right: 22px;
+  display: inline-block;
+  margin-bottom: 10px;
+  &:link, &:visited {
+    color: $blue2;
+  }
+  @include breakpoint( $mob6 ) {
+    margin-right: 45px;
+    margin-left: 0;
+    margin-bottom: 0;
+    display: inline;
+
+  }
+}
+.telekom-hilft__links--fb {
+  background: white url('/images/fb.png') left center no-repeat;
+  background-size: 22px 22px;
+}
+.telekom-hilft__links--tw {
+  background: white url('/images/twitter.png') left center no-repeat;
+  background-size: 22px 22px;
+}
+

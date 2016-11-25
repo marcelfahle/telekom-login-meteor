@@ -1,0 +1,121 @@
+@import "{}/client/styles/_variables";
+@import "{}/client/styles/_typography";
+
+footer {
+  min-height: 450px;
+  background: $gray;
+}
+footer nav {
+  a, a:link, a:visited {
+    @include copyfooter;
+    color: $footertextgray;
+    text-decoration: none;
+  }
+  a:hover, a:active {
+    color: $blue;
+  }
+}
+.footer__meta p {
+  @include metafooter;
+  color: $footertextgray;
+}
+.footer__meta nav {
+  a, a:link, a:visited {
+    @include metafooter;
+    color: $blue;
+    text-decoration: none;
+  }
+  a:hover, a:active {
+    color: $footertextgray;
+  }
+  
+}
+
+
+.footer__nav {
+  padding-top: 2.7rem;
+  text-align: center;
+  color: #a4a4a4;
+  margin-bottom: rem(50px);
+  @include breakpoint( $des1 ) {
+    margin-bottom: rem(100px);
+
+  }
+}
+
+.footer__social {
+  text-align: center;
+  margin-bottom: 50px;
+  h4 { 
+    @include copyfooter; 
+    color: $footertextgray;
+    margin-bottom: 50px;
+  }
+  ul li {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 38px;
+    height: 38px;
+    display: inline-block;
+    text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+
+.footer__meta {
+  padding-bottom: 30px;
+  position: relative;
+  &:after {
+    content: ' ';
+    display: block;
+    clear:both;
+  }
+  nav {
+    padding-bottom: 40px;
+    @include breakpoint( $mob6 ) {
+      padding-bottom: 0;
+      display: inline;
+      float: right;
+      margin-right: $content-space;
+
+    }
+  }
+  ul {
+    text-align: center;
+    @include breakpoint( $mob6 ) {
+      text-align: left;
+    }
+
+  }
+  ul li {
+    margin-bottom: 10px;
+    @include breakpoint( $mob6 ) {
+      display: inline;
+      margin-left: 15px;
+    }
+  }
+} 
+.footer__copyright {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  @include breakpoint( $mob6 ) {
+    position: relative;
+    display: inline;
+    left: 0;
+    bottom: 0;
+    transform: none;
+    margin-left: $content-space;
+  }
+}
+
+

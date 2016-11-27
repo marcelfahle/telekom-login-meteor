@@ -2,7 +2,7 @@ import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import HomeForm from './HomeForm.jsx';
-import { Home, HiomeSchema } from '../../api/home/home.js';
+import { Home, HomeSchema } from '../../api/home/home.js';
 import { update } from './../../api/home/methods.js';
 
 

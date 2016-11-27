@@ -1,0 +1,28 @@
+@import '{}/client/styles/_variables';
+@import '{}/client/styles/_typography';
+
+
+.backend {
+  min-height: 300px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  h1 {
+    @include h2;
+  }
+} 
+
+.backend__content {
+  display: flex;
+}
+.backend__sidebar {
+  width: 20%;
+  //margin-right: 50px;
+  //margin-top: 100px;
+}
+.backend__main {
+  width: 70%;
+  //margin-left: 22%;
+}
+.backend__form {
+  //margin: 0 auto;
+}

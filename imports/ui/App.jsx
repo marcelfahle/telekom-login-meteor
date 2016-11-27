@@ -11,15 +11,7 @@ import AppPanel from './components/AppPanel.jsx';
 import './App.scss';
 
 
-//import Rebase from 're-base';
-
-//var base = Rebase.createClass({
-//  apiKey: "AIzaSyDQNjuj0vKaX5AjAz4aOpepoiLmjsMXw8Y",
-//  authDomain: "telekom-login.firebaseapp.com",
-//  databaseURL: "https://telekom-login.firebaseio.com",
-//  storageBucket: "telekom-login.appspot.com",
-//});
-
+// temp
 import Data from './../api/data.json';
 
 
@@ -34,7 +26,6 @@ class App extends React.Component {
       menu: false,
       appPanel: false,
       data: Data,
-      home: Data.home,
       funktionen: Data.funktionen,
       sogehts: Data.sogehts,
       dienste: Data.dienste

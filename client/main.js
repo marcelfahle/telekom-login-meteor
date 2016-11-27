@@ -6,10 +6,14 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 import App from './../imports/ui/App.jsx';
 import Test  from './../imports/ui/Test';
-import Home from './../imports/ui/pages/Home.jsx';
+import HomeContainer from './../imports/ui/pages/HomeContainer.jsx';
 import Funktionen from './../imports/ui/pages/Funktionen.jsx';
 import SoGehts from './../imports/ui/pages/SoGehts.jsx';
 import Dienste from './../imports/ui/pages/Dienste.jsx';
+
+import { BackendLayout } from './../imports/ui/layouts/BackendLayout.jsx';
+import Dashboard from './../imports/ui/backend/Dashboard.jsx';
+import HomeFormContainer from './../imports/ui/backend/HomeFormContainer.jsx';
 
 //import './index.html';
 
@@ -22,10 +26,17 @@ Meteor.startup( () => {
   render(
     <Router onUpdate={ () => onUpdate() } history={ browserHistory }>
       <Route path="/"  component={ App }>
-        <IndexRoute component={ Home } />
+        <IndexRoute component={ HomeContainer } />
         <Route path="/funktionen" component={ Funktionen } />
         <Route path="/so-gehts" component={ SoGehts } />
         <Route path="/dienste-uebersicht" component={ Dienste } />
+
+
+      </Route>
+      <Route path="/admin" component={ BackendLayout }>
+        <IndexRoute component={ Dashboard } />
+        <Route path="home" component={ HomeFormContainer } />
+        
       </Route>
     </Router>
     , document.getElementById('root') 

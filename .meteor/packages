@@ -25,3 +25,5 @@ meteortoys:allthings
 react-meteor-data
 check
 mdg:validated-method
+ostrio:files
+accounts-password

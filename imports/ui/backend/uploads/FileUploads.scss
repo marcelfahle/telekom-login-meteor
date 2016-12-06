@@ -1,0 +1,44 @@
+
+
+
+
+.fileuploads__wrapper {
+  h2 {
+
+  }
+}
+
+.uploader {
+  margin-bottom: 40px;
+}
+
+
+.fileuploads__list {
+  padding-top: 40px;
+  ul {
+    li {
+      display: inline-block;
+      height: 120px;
+      width: 120px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #d0d0d0;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      div {
+        width: 100%;
+        height: calc(100% - 20px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 1.2;
+      }
+
+    }
+  }
+}

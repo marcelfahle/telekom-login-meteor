@@ -1,7 +1,10 @@
 import { Mongo } from 'meteor/mongo'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 
+
 const Home = new Mongo.Collection('home');
+
+
 
 Home.deny({
   insert() { return true; },
@@ -21,11 +24,107 @@ const textFieldMaterialForm = {
 const textAreaMaterialForm = {
   fullWidth: true,
   multiLine: true,
-  rows: 3
+  rows: 2
 }
 
 
 const HomeSchema = new SimpleSchema({
+  herobold: {
+    type: String,
+    label: "Header Bold",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  heroregular: {
+    type: String,
+    label: "Header Regular",
+    optional: true,
+    materialForm: textAreaMaterialForm
+  },
+  heroimage: {
+    type: String,
+    label: "Header Photo",
+    optional: true,
+    materialForm: {
+      disabled: true
+    }
+  },
+  
+  newsactive: {
+    type: Boolean,
+    label: "News aktiv?",
+    optional: true,
+    materialForm: {
+      switcher: "Checkbox"
+    }
+  },
+  newstitle: {
+    type: String,
+    label: "Titel",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  newscopy: {
+    type: String,
+    label: "Copy",
+    optional: true,
+    materialForm: textAreaMaterialForm
+  },
+  newscta: {
+    type: Boolean,
+    label: "Call-To-Action?",
+    optional: true,
+    materialForm: {
+      switcher: "Checkbox"
+    }
+  },
+  newsctalabel: {
+    type: String,
+    label: "Call-To-Action Label",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  newsctaurl: {
+    type: String,
+    label: "Call-To-Action URL",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  
+
+
+  footerherobold: {
+    type: String,
+    label: "Footer Image Bold",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  footerheroregular: {
+    type: String,
+    label: "Footer Image Regular",
+    optional: true,
+    materialForm: textAreaMaterialForm
+  },
+  footerherohascta: {
+    type: Boolean,
+    label: "Footer Hero Call-To-Action",
+    optional: true,
+    materialForm: {
+      switcher: 'Checkbox'
+    }
+  },
+  footerheroctalabel: {
+    type: String,
+    label: "Call-To-Action Label",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  footerheroctaurl: {
+    type: String,
+    label: "Call-To-Action URL",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
   title: {
     type: String,
     label: "Title",

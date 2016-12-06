@@ -36,7 +36,6 @@ export const BackendLayout = ({ children }) => {
           />
         </header>
           <main className="backend__content">
-            <h1>Administration</h1>
             <div className="backend__sidebar">
               <BackendNav />
             </div>

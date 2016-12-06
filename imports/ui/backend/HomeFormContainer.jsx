@@ -3,6 +3,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 import HomeForm from './HomeForm.jsx';
 import { Home, HomeSchema } from '../../api/home/home.js';
+import { UserFiles } from '../../api/user_files/UserFiles.js';
 import { update } from './../../api/home/methods.js';
 
 
@@ -22,11 +23,14 @@ const handleUpdate = (doc, updatedFields) => {
 
 export default HomeFormContainer = createContainer( ({ params }) => {
   const dataHandle = Meteor.subscribe('home');
-  const loading = !dataHandle.ready();
+  const filesHandle = Meteor.subscribe('user_files.all');
+  const loading = !dataHandle.ready() || !filesHandle.ready();
   const data  = Home.findOne();
+  const files = UserFiles.find();
   return {
     loading, 
     data,
+    files,
     handleUpdate,
     schema: HomeSchema
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Hero from './../components/Hero.jsx';
+import News from './../components/News.jsx';
 import ContentWrapper from './../components/ContentWrapper.jsx';
 
 //import { Home } from '../../api/home/home.js';
@@ -9,6 +10,9 @@ import ContentWrapper from './../components/ContentWrapper.jsx';
 import './Home.scss';
 
 
+function createMarkup( content  ) {
+  return {__html: content};
+}
 
 const HomePage = ({ loading, home, data } ) => {
   if (loading) {
@@ -20,19 +24,23 @@ const HomePage = ({ loading, home, data } ) => {
         img="header-home.jpg"
         aspectClass="aspect16-5plus"
         >
-        <span>TELEKOM LOGIN:</span><br/>
-        WEIL EINFACH EINLOGGEN EINFACHER IST
+        <p><span dangerouslySetInnerHTML={ createMarkup( data.herobold ) } /></p>
+        <p dangerouslySetInnerHTML={ createMarkup( data.heroregular ) } />
       </Hero>
 
 
 
-      <ContentWrapper className="content-wrapper-full news">
-        <h2>Nutze die Vorteile von Telekom Login jetzt auch mit Spotify!</h2>
-        <p>Spotify ist ein digitaler Musikdienst, der dir Zugriff auf Millionen von Songs ermöglicht.</p>
-        <p>
-          <a className="button button-gray" href="#">Mehr Infos</a>
-        </p>
-      </ContentWrapper>
+      { 
+        data.newsactive 
+          ? <News 
+            title={data.newstitle}
+            copy={data.newscopy}
+            cta={ data.newscta }
+            ctalabel={ data.newsctalabel }
+            ctaurl={ data.newsctaurl }
+          />
+          : null
+      }
 
       <ContentWrapper className="home__intro">
         <p className="home__intro--login-button">
@@ -103,13 +111,13 @@ const HomePage = ({ loading, home, data } ) => {
         className="last-action-hero"
         aspectClass="aspect16-7 last-hero"
         >
-        <span>
-          NOCH NICHT REGISTRIERT?<br/>
-          IHRE ERSTEN SCHRITTE MIT DEM TELEKOM LOGIN
-        </span>
-        <p className="hero-cta">
-          <Link to="/so-gehts" className="button button-gray">So geht's !</Link>
-        </p>
+        <p><span dangerouslySetInnerHTML={ createMarkup( data.footerherobold ) } /></p>
+        <p dangerouslySetInnerHTML={ createMarkup( data.footerheroregular ) } />
+        {
+          data.footerherohascta
+            ? <p className="hero-cta"><Link to="/so-gehts" className="button button-gray">So geht's !</Link></p>
+            : ''
+        }
       </Hero>
 
     </div>

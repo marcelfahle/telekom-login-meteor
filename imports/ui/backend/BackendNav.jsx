@@ -11,6 +11,7 @@ const BackendNav = () => (
     <MenuItem primaryText="So geht's" onTouchTap={(e) => browserHistory.push('/admin/so-gehts')} />
     <MenuItem primaryText="Funktionen" onTouchTap={(e) => browserHistory.push('/admin/funktionen')} />
     <MenuItem primaryText="Dienste" onTouchTap={(e) => browserHistory.push('/admin/dienste')} />
+    <MenuItem primaryText="Uploads" onTouchTap={(e) => browserHistory.push('/admin/uploads')} />
   </Menu>
 );
 export default BackendNav;

@@ -102,6 +102,11 @@
   }
 }
 
+.content-wrapper.hero__display--wrapper {
+  @include breakpoint( $tab1 ) {
+    position: absolute;
+  }
+}
 .hero__display {
   z-index: 5;
   background: $magenta;
@@ -115,7 +120,9 @@
 
   width: calc(100% - 0.522em);
 
-  @include hero-display;
+  p {
+    @include hero-display;
+  }
 
   padding-top: 0.422em;
   padding-left: 0.578em;

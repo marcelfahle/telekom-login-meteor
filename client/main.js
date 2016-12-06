@@ -14,6 +14,7 @@ import Dienste from './../imports/ui/pages/Dienste.jsx';
 import { BackendLayout } from './../imports/ui/layouts/BackendLayout.jsx';
 import Dashboard from './../imports/ui/backend/Dashboard.jsx';
 import HomeFormContainer from './../imports/ui/backend/HomeFormContainer.jsx';
+import FileUploadsContainer from './../imports/ui/backend/uploads/FileUploadContainer.jsx';
 
 //import './index.html';
 
@@ -36,6 +37,8 @@ Meteor.startup( () => {
       <Route path="/admin" component={ BackendLayout }>
         <IndexRoute component={ Dashboard } />
         <Route path="home" component={ HomeFormContainer } />
+
+        <Route path="uploads" component={ FileUploadsContainer } />
         
       </Route>
     </Router>

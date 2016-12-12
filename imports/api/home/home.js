@@ -46,7 +46,7 @@ const HomeSchema = new SimpleSchema({
     label: "Header Photo",
     optional: true,
     materialForm: {
-      disabled: true
+      id: 'heroimage'
     }
   },
   
@@ -104,6 +104,14 @@ const HomeSchema = new SimpleSchema({
     label: "Footer Image Regular",
     optional: true,
     materialForm: textAreaMaterialForm
+  },
+  footerheroimage: {
+    type: String,
+    label: "Header Photo",
+    optional: true,
+    materialForm: {
+      id: 'footerheroimage'
+    }
   },
   footerherohascta: {
     type: Boolean,

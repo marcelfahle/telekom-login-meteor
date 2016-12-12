@@ -5,11 +5,14 @@ import { FilesCollection } from 'meteor/ostrio:files';
 
 
 export const UserFiles = new FilesCollection({
-  storagePath: '/Users/mf/code/login-meteor-uploads',
+  // TODO: check out the config file setting of this. Need to come from 
+  // settings file and probably shouldnt be on the server
+  storagePath: Meteor.settings.storagePath,
   collectionName: 'user_files',
-  downloadRoute: '/uploads/',
+  downloadRoute: Meteor.settings.downloadRoute,
   allowClientCode: false, // Disallow removal from client
   onBeforeUpload: (file) => {
+    //console.log('onBeforeUpload.... server or client', Meteor.settings.storagePath);
     if ( file.size <= 10485760 && /png|jpg|jpeg/i.test(file.extension)) {
       return true;
     } else {

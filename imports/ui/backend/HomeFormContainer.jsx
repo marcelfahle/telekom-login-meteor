@@ -7,10 +7,15 @@ import { UserFiles } from '../../api/user_files/UserFiles.js';
 import { update } from './../../api/home/methods.js';
 
 
-const handleUpdate = (doc, updatedFields) => {
+const handleUpdate = (doc, updatedFields, extraFields) => {
+  console.log('doc', doc);
+  console.log('updatedFields', updatedFields);
+  console.log('extra', extraFields);
+  const allFields = Object.assign({}, updatedFields, extraFields);
+  console.log('allfields', allFields);
   update.call( {
     docId: doc._id,
-    doc: updatedFields
+    doc: allFields
   }, (err, res) => {
     if (err) {
       console.log('error saving: ', err);
@@ -19,6 +24,7 @@ const handleUpdate = (doc, updatedFields) => {
     }
   });
 };
+
 
 
 export default HomeFormContainer = createContainer( ({ params }) => {

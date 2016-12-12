@@ -7,7 +7,7 @@ import './Hero.scss';
 const Hero = ({ children, img, className = "", aspectClass = "aspect16-5" }) => {
   
   const styles = {
-    backgroundImage: "url('/images/" + img + "')"
+    backgroundImage: "url('" + img + "')"
   }
 
   return(

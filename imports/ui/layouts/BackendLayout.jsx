@@ -1,4 +1,5 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 
 import AppBar from 'material-ui/AppBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -28,7 +29,7 @@ export const BackendLayout = ({ children }) => {
         <header>
           <BrandBar />
           <AppBar
-            title="Administration"
+            title={Meteor.settings.public.adminTitle}
             showMenuIconButton={false}
             style={{backgroundColor: '#ededed'}}
             titleStyle={{color: '#383838'}}

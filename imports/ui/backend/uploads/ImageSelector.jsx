@@ -29,9 +29,7 @@ class ImageSelector extends React.Component {
 
   selectImage(file, e) {
     this.setState( { open: false } );
-    console.log('id', file._id);
-    console.log('link', file.link());
-
+    this.props.setField( file.link() );
   }
 
 
@@ -52,7 +50,13 @@ class ImageSelector extends React.Component {
 
     return (
 
-      <div>
+      <div className="image-selector">
+
+        <div className="image-selector__preview">
+          <img src={this.props.current} height="100" alt="" />
+        </div>
+
+
         <RaisedButton
           onClick={ () => this.handleOpen() }
         >Select Image</RaisedButton>

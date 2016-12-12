@@ -18,8 +18,21 @@
   }
 } 
 
-.autoform {
+.autoform, .image-selector {
   padding: 10px 20px;
+}
+.autoform.has-image-selector {
+  position: relative;
+  > div:last-child {
+    margin-top: 200px;
+  }
+}
+.image-selector {
+  position: absolute;
+  margin-top: -236px;
+  img {
+    margin-bottom: 10px;
+  }
 }
 .form-section {
   margin-bottom: 2em;

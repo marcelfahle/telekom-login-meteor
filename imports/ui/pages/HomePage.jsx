@@ -21,7 +21,7 @@ const HomePage = ({ loading, home, data } ) => {
   return(
     <div className="home">
       <Hero 
-        img="header-home.jpg"
+        img={ data.heroimage }
         aspectClass="aspect16-5plus"
         >
         <p><span dangerouslySetInnerHTML={ createMarkup( data.herobold ) } /></p>
@@ -107,7 +107,7 @@ const HomePage = ({ loading, home, data } ) => {
 
 
       <Hero 
-        img="hero-notyetregistered.jpg"
+        img={ data.footerheroimage }
         className="last-action-hero"
         aspectClass="aspect16-7 last-hero"
         >

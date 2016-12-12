@@ -2,13 +2,19 @@ import React from 'react';
 import LinearProgress from 'material-ui/LinearProgress';
 import Divider from 'material-ui/Divider';
 import ContentWrapper from  './../components/ContentWrapper.jsx';
+import Helmet from 'react-helmet';
 
 import { UserFiles } from '././../../../api/user_files/UserFiles.js';
+import { deleteUserFile } from '././../../../api/user_files/methods.js';
+
 
 import Uploader from './Uploader.jsx';
 import File from './File.jsx';
+import FileUploadsList from './FileUploadsList.jsx';
 
 import './FileUploads.scss';
+
+
 
 class FileUploads extends React.Component {
   constructor( props ) {
@@ -27,6 +33,7 @@ class FileUploads extends React.Component {
     this.uploadProgress = this.uploadProgress.bind( this );
     this.onFilenameChange = this.onFilenameChange.bind( this );
     this.onFileSelect = this.onFileSelect.bind( this );
+    this.deleteFile = this.deleteFile.bind( this );
   }
 
   onFileSelect(e) {
@@ -96,6 +103,20 @@ class FileUploads extends React.Component {
     console.log( 'upload progress' );
   }
 
+
+  removeFile( id ) {
+
+  }
+
+  deleteFile( id ) {
+    deleteUserFile.call( {id: id}, (err, res) => {
+      if (err) {
+        alert( err.reason );
+        return;
+      }
+    });
+  }
+
   render() {
     if (this.props.loading) {
       return <h1>Ladevorgang</h1>
@@ -103,8 +124,10 @@ class FileUploads extends React.Component {
 
 
     const files = this.props.filesCursor.each();
+
     return (
       <ContentWrapper className="backend">
+        <Helmet link={[{"rel": "stylesheet", "href": "https://fonts.googleapis.com/icon?family=Material+Icons"}]} /> 
         <h1>File Uploads</h1>
         <div className="fileuploads__wrapper">
           <div className="fileuploads__uploader">
@@ -123,11 +146,11 @@ class FileUploads extends React.Component {
 
           <Divider />
 
-          <div className="fileuploads__list">
-            <ul>
-              { files.map( (file, i) => <File file={file} key={`file_${i}`} /> ) }
-            </ul>
-          </div>
+          <FileUploadsList 
+            files={files} 
+            deleteFile={ this.deleteFile }
+          />
+
         </div>
       </ContentWrapper>
     )

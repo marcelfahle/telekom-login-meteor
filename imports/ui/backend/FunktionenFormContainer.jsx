@@ -14,9 +14,9 @@ const handleUpdate = (doc, updatedFields, extraFields) => {
     doc: allFields
   }, (err, res) => {
     if (err) {
-      console.log('error saving: ', err);
+      Bert.alert( err.reason, 'danger', 'growl-top-right' ); 
     } else {
-      // console.log('success. change route');
+      Bert.alert( 'Die Seite wurde aktualisiert.', 'success', 'growl-top-right' ); 
     }
   });
 };

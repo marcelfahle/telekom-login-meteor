@@ -20,7 +20,7 @@ export default class Faq extends React.Component {
   } 
 
   render() {
-    const faq = this.props.faq;
+    const { head, body } = this.props;
 
     const faqClasses = classNames({
       'open': this.state.open,
@@ -30,16 +30,11 @@ export default class Faq extends React.Component {
     return(
       <li className={faqClasses}>
         <dl className="faq">
-          <dt className="faq__title" onClick={this.toggleFaq}>{faq.title}</dt>
+          <dt className="faq__title" onClick={this.toggleFaq}>{ head }</dt>
           <dd className="faq__body">
             <ReactMarkdown 
-              source={faq.content} 
+              source={ body } 
              />
-            {
-              (faq.showlink === true) ?
-                <a href={faq.linkurl} className="button button-gray button-small">{faq.linktitle}</a> :
-                null
-            }
           </dd>
         </dl>
       </li>

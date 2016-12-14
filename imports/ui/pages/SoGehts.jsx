@@ -1,38 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { createContainer } from 'meteor/react-meteor-data';
 
 import Hero from './../components/Hero.jsx';
 import ContentWrapper from './../components/ContentWrapper.jsx';
 import Faq from './../components/Faq.jsx';
 
+import { Sogehts } from './../../api/sogehts/sogehts.js';
+
 import './SoGehts.scss';
 
-const SoGehts = ({data}) => {
+function createMarkup( content  ) {
+  return {__html: content};
+}
+
+const SogehtsPage = ({loading, data}) => {
 
 
+    /*
   const faqs = (!data.sogehts.faqlist)? null : data.sogehts.faqlist.map( (faq, i) => {
     return <Faq faq={faq} key={`faq${i}`} />
   });
+  */
 
-  const html = (markup) => {
-    return {__html: markup};
-  } 
 
+  if ( loading ) {
+    return <div>Ladevorgang...</div>
+  }
 
   return (
     <div className="so-gehts">
-      <Hero img="header-sogehts.jpg">
-        <span>ERSTE SCHRITTE MIT <br/>DEM TELEKOM LOGIN</span>
+      <Hero img={data.heroimage}>
+        <p><span dangerouslySetInnerHTML={ createMarkup( data.herobold ) } /></p>
+        <p dangerouslySetInnerHTML={ createMarkup( data.heroregular ) } />
       </Hero>
 
       <ContentWrapper className="sogehts__intro">
-        <h1 className="title--center" dangerouslySetInnerHTML={html(data.sogehts.title)}></h1>
-        <p className="title__copy">{data.sogehts.titlecopy}</p>
+        <h1 className="title--center" dangerouslySetInnerHTML={createMarkup(data.title)}></h1>
+        <p className="title__copy">{data.titlecopy}</p>
       </ContentWrapper>
 
       <ContentWrapper className="sogehts__faqs">
         <ul className="faqs">
-          {faqs}
+          <Faq body={data.faq1copy} head={data.faq1head} />
+          <Faq body={data.faq2copy} head={data.faq2head} />
+          <Faq body={data.faq3copy} head={data.faq3head} />
+          <Faq body={data.faq4copy} head={data.faq4head} />
+
         </ul>
       </ContentWrapper>
 
@@ -88,4 +102,16 @@ const SoGehts = ({data}) => {
 
 };
 
-export default SoGehts;
+const SogehtsContainer = createContainer( ({ params }) => {
+  const dataHandle = Meteor.subscribe( 'sogehts' );
+  const loading = !dataHandle.ready();
+  const data = Sogehts.findOne();
+  return {
+    loading,
+    data
+  }
+}, SogehtsPage );
+
+
+export default SogehtsContainer;
+

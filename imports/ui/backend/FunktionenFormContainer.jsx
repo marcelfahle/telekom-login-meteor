@@ -1,10 +1,10 @@
 import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import HomeForm from './HomeForm.jsx';
-import { Home, HomeSchema } from '../../api/home/home.js';
-import { UserFiles } from '../../api/user_files/UserFiles.js';
-import { update } from './../../api/home/methods.js';
+import FunktionenForm from './FunktionenForm.jsx';
+import { Funktionen, FunktionenSchema } from './../../api/funktionen/funktionen.js';
+import { UserFiles } from './../../api/user_files/UserFiles.js';
+import { update } from './../../api/funktionen/methods.js';
 
 
 const handleUpdate = (doc, updatedFields, extraFields) => {
@@ -21,21 +21,18 @@ const handleUpdate = (doc, updatedFields, extraFields) => {
   });
 };
 
-
-
-export default HomeFormContainer = createContainer( ({ params }) => {
-  const dataHandle = Meteor.subscribe('home');
+export default FunktionenFormContainer = createContainer( ({ params }) => {
+  const dataHandle = Meteor.subscribe('funktionen');
   const filesHandle = Meteor.subscribe('user_files.all');
   const loading = !dataHandle.ready() || !filesHandle.ready();
-  const data  = Home.findOne();
+  const data  = Funktionen.findOne();
   const files = UserFiles.find();
   return {
     loading, 
     data,
     files,
     handleUpdate,
-    schema: HomeSchema
+    schema: FunktionenSchema
   }
-}, HomeForm);
-
+}, FunktionenForm);
 

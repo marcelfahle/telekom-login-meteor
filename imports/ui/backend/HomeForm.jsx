@@ -38,7 +38,7 @@ export default class HomeForm extends React.Component {
   setField( field, link ) {
     //
     //document.getElementById('heroimage').value = link;
-    this.setState({heroimage: link});
+    this.setState({field: link});
   }
 
   currentImage( field ) {

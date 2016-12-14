@@ -1,5 +1,8 @@
 {
   "funktionen" : {
+    "herobold": "EIN LOGIN.",
+    "heroregular": "VIELE MÖGLICHKEITEN.",
+    "heroimage": "/uploads/user_files/mA3gcv8WCceuyer6f/original/mA3gcv8WCceuyer6f.jpg",
     "bullet1color" : "#ffffff",
     "bullet1copy" : "Mit dem Telekom Login empfangen Sie MobileTV im heimischen WLAN genauso selbstverständlich wie unterwegs im Funknetz. Und auf Ihr gebuchtes Entertain-Paket greifen Sie sogar über die Set-Top-Box eines Freundes zu. Einfach einloggen und Sie sind zu Hause.",
     "bullet1head" : "Alle Telekom Produkte jederzeit und überall",
@@ -7,7 +10,11 @@
     "bullet2copy" : "Mit Entertain schützen Sie Kinder vor jugendgefährdenden Inhalten. Denn Fernsehangebote mit einer Alterskennung ab 16 Jahren müssen mit einer Benutzer-PIN freigeben werden – in der Set-Top-Box und auch in der MobileTV-App. Eine neue Benutzer-PIN vergeben oder ändern Sie bequem in den Login Einstellungen.",
     "bullet2head" : "Jugendschutz bei Entertain stärken: Mit der Benutzer-Pin",
     "title" : "Einfach besser, weil er immer besser wird",
-    "titlecopy" : "Wir erweitern den Telekom Login ständig um nützliche Funktionen, damit die Online-Welt einfach selbstverständlicher für Sie wird. Erwarten Sie mehr Extras, mehr Vorteile, mehr Möglichkeiten – jetzt, und in Zukunft."
+    "titlecopy" : "Wir erweitern den Telekom Login ständig um nützliche Funktionen, damit die Online-Welt einfach selbstverständlicher für Sie wird. Erwarten Sie mehr Extras, mehr Vorteile, mehr Möglichkeiten – jetzt, und in Zukunft.",
+    "settingshead": "Login Einstellungen: Ihr Telekom Login Kontrollzentrum",
+    "settingscopy": "Verwalten Sie Benutzerdaten, Freigaben und Funktionen zentral in den Einstellungen Ihres Telekom Logins.",
+    "settingsctalabel": "Login Einstellungen",
+    "settingsctaurl": "https://accounts.login.idm.telekom.com/oauth2/auth?scope=openid&response_type=code&client_id=10LIVESAM30000004901PHOENIX0000000000000&redirect_uri=https%3A%2F%2Fwww.telekom.de%2Fstart&logout_uri=https%3A%2F%2Fwww.telekom.de%2Funterwegs%2Ftbslogoutservlet"
   },
   "home" : {
     "herobold": "TELEKOM LOGIN:",
@@ -37,6 +44,9 @@
     "titlecopy" : "Ob mit Computer, Tablet oder Smartphone: Mit dem Telekom Login nutzen Sie Ihre Telekom Dienste schnell, bequem und einfach sicherer."
   },
   "sogehts" : {
+    "herobold": "ERSTE SCHRITTE MIT <br/>DEM TELEKOM LOGIN",
+    "heroregular": "",
+    "heroimage": "/uploads/user_files/mA3gcv8WCceuyer6f/original/mA3gcv8WCceuyer6f.jpg",
     "faqlist" : [ {
       "content" : "Als Festnetz-Kunde haben Sie bereits einen Telekom Login. Die Zugangsdaten entnehmen Sie Ihrem Starter-Paket. Sie bestehen aus **T-Online Nummer** und **Persönlichem Kennwort**. Sobald Sie sich das erste Mal einloggen, können Sie Benutzername und Kennwort nach Wunsch ändern.  \n### Benutzername und Kennwort ändern:  \n1. Halten Sie T-Online Nummer und Persönliches Kennwort bereit \n2. Loggen Sie sich im Kundencenter Festnetz ein \n3. Folgen Sie dem Einrichtungsassistenten, um Benutzername und Kennwort nach Wunsch zu ändern – fertig!  \n\n[Zum Kundencenter Festnetz](//telekom.com)",
       "title" : "Erstmalig als Festnetz-Kunde einloggen"

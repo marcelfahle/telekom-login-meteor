@@ -210,11 +210,4 @@ const HomeSchema = new SimpleSchema({
 Home.attachSchema( HomeSchema );
 
 
-
-
-
-
-
-
-
 export { Home, HomeSchema };

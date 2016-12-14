@@ -2,7 +2,7 @@
 - [ ] Bert Notifications
 
 ### Client
-- [ ] Ändern und Speichern im CMS bei mir nicht möglich
+- [x] Ändern und Speichern im CMS bei mir nicht möglich
 - [ ] Verwaltung der Links (z. B. "?") im Top-Menü nicht möglich
 - [ ] Bereich "Dienste" noch nicht aktiv
 - [ ] Page "Login mit Telekom" im CMS vorbereiten

@@ -10,15 +10,15 @@ Funktionen.deny({
 });
 
 SimpleSchema.extendOptions({
-  materialForm: Match.Optional( Object )
+  materialForm: Match.Optional(Object)
 });
 
 const textFieldMaterialForm = {
-  fullWidth: true,
+  fullwidth: true,
 }
 const textAreaMaterialForm = {
-  fullWidth: true,
-  multiLine: true,
+  fullwidth: true,
+  multiline: true,
   rows: 2
 }
 

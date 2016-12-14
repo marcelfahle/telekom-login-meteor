@@ -17,7 +17,7 @@ class ImageSelector extends React.Component {
   }
 
   selectImage ( field ) {
-    console.log('select', field );
+    //console.log('select', field );
   }
 
   handleOpen() {
@@ -44,6 +44,7 @@ class ImageSelector extends React.Component {
     if (this.props.loading) {
       return <h1>Ladevorgang</h1>
     } 
+    // initial set. 
 
 
     const files = this.props.files.each();

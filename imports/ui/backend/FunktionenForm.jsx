@@ -17,17 +17,10 @@ export default class FunktionenForm extends React.Component {
     super( props );
 
     this.state = {
-      heroimage: {},
+      heroimage: props.heroimage
     }
   }
 
-  currentImage( field ) {
-    if(Object.keys(this.state[field]).length === 0 && this.state[field].constructor === Object) {
-      return this.props.data[field];
-    } else {
-      return this.state[field];
-    }
-  }
 
   render() {
     if (this.props.loading) {
@@ -59,9 +52,9 @@ export default class FunktionenForm extends React.Component {
 
             <ImageSelector 
               files={ this.props.files } 
-              current={ this.currentImage('heroimage') }
-              field="heroimage" 
-              setField={ link => this.setState({ heroimage: link} ) } />
+              current={ this.state.heroimage || this.props.data.heroimage }
+              setField={ link => this.setState({ heroimage: link} ) } 
+            />
             
           </Paper>
 

@@ -13,39 +13,14 @@ import ImageSelector from './uploads/ImageSelector.jsx';
 
 const errors = [];
 
-/*
-const updateThisShit = (fields, changedFields, extraFields ) => {
-  console.log( 'updaaaaate', fields);
-  console.log( 'changedfields', changedFields);
-  console.log( 'extraFields', extraFields);
-  console.log( 'moar', moar);
-  console.log( 'arguments', arguments );
-}
-*/
-
-
 
 export default class HomeForm extends React.Component {
   constructor( props ) {
     super( props );
 
     this.state = {
-      heroimage: {},
-      footerheroimage: {}
-    }
-  }
-
-  setField( field, link ) {
-    //
-    //document.getElementById('heroimage').value = link;
-    this.setState({field: link});
-  }
-
-  currentImage( field ) {
-    if(Object.keys(this.state[field]).length === 0 && this.state[field].constructor === Object) {
-      return this.props.data[field];
-    } else {
-      return this.state[field];
+      heroimage: props.heroimage, 
+      footerheroimage: props.footerheroimage
     }
   }
 
@@ -96,9 +71,9 @@ export default class HomeForm extends React.Component {
 
             <ImageSelector 
               files={ this.props.files } 
-              current={ this.currentImage('heroimage') }
-              field="heroimage" 
-              setField={ link => this.setState({ heroimage: link} ) } />
+              current={ this.state.heroimage || this.props.data.heroimage }
+              setField={ link => this.setState({ heroimage: link} ) } 
+            />
             
           </Paper>
 
@@ -171,9 +146,9 @@ export default class HomeForm extends React.Component {
             />
             <ImageSelector 
               files={ this.props.files } 
-              current={ this.currentImage('footerheroimage') }
-              field="footerheroimage" 
-              setField={ link => this.setState({ footerheroimage: link} ) } />
+              current={ this.state.footerheroimage || this.props.data.footerheroimage }
+              setField={ link => this.setState({ footerheroimage: link} ) } 
+            />
 
           </Paper>
 

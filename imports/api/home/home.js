@@ -46,7 +46,8 @@ const HomeSchema = new SimpleSchema({
     label: "Header Photo",
     optional: true,
     materialForm: {
-      id: 'heroimage'
+      disabled: true,
+      id: 'heroimage',
     }
   },
   

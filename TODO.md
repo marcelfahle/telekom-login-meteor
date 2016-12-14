@@ -1,5 +1,5 @@
 - [ ] Dienste Backend
-- [ ] Bert Notifications
+- [x] Bert Notifications
 
 ### Client
 - [x] Ändern und Speichern im CMS bei mir nicht möglich

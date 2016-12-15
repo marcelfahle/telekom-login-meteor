@@ -1,0 +1,14 @@
+@import "{}/client/styles/_variables";
+@import "{}/client/styles/_typography";
+@import '{}/node_modules/breakpoint-sass/stylesheets/_breakpoint';
+
+
+.services-wrapper {
+}
+
+.services-list {
+  margin: 20px 10px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-end;
+}

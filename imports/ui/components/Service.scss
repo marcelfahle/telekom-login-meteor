@@ -5,6 +5,7 @@
 .service {
   display: flex;
   margin-bottom: rem(56px);
+  position: relative;
 
   @include breakpoint( $mob4 ) {
     width: 48%;
@@ -32,3 +33,15 @@
 
   }
 } 
+.service.has-actions {
+  margin-bottom: 80px;
+  p { font-size: 1rem; }
+}
+.service__info + .actions {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  i { 
+    color: $border-color3;
+  }
+}

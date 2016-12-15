@@ -15,11 +15,11 @@ SimpleSchema.extendOptions({
 });
 
 const textFieldMaterialForm = {
-  fullwidth: true,
+  fullWidth: true,
 }
 const textAreaMaterialForm = {
-  fullwidth: true,
-  multiline: true,
+  fullWidth: true,
+  multiLine: true,
   rows: 2
 }
 
@@ -32,27 +32,41 @@ const ServicesSchema = new SimpleSchema({
   },
   icon: {
     type: String,
-    label: 'Title',
+    label: 'Icon',
     optional: true,
   },
   description: {
     type: String,
-    label: 'Title',
+    label: 'Description',
     optional: true,
     materialForm: textAreaMaterialForm
 
   },
   category: {
     type: String,
-    label: 'Title',
-    optional: true
+    label: 'Category',
+    optional: true,
+    allowedValues: ['telekom', 'others'],
+    materialForm: {
+      options: [
+        { label: 'Telekom Dienste', value: 'telekom' },
+        { label: 'Partner Dienste', value: 'others' }
+      ]
+    }
 
   },
   url: {
     type: String,
-    label: 'Title',
+    label: 'URL',
     optional: true,
     materialForm: textFieldMaterialForm
+  },
+  featured: {
+    type: Boolean,
+    label: 'Top-Menu',
+    optional: true,
+    materialForm: {
+    }
   }
 });
 

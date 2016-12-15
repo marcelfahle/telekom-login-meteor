@@ -1,15 +1,145 @@
 import React from 'react';
+import ReactAutoForm from 'meteor-react-autoform';
+
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+
+import ContentWrapper from './../components/ContentWrapper.jsx';
+import ImageSelector from './uploads/ImageSelector.jsx';
+import Service from './../components/Service.jsx';
+import ConfirmationDialog from './components/ConfirmationDialog.jsx';
+
+import './DiensteAdmin.scss';
 
 
-const DiensteAdmin = ({ loading }) => {
-  if (loading) {
-    return <div>Ladevorgang...</div>
+class DiensteAdmin extends React.Component {
+  constructor( props ) {
+    super( props );
+    this.state = {
+      icon: "",
+      showConfirmDelete: false,
+      toDelete: {}
+    }
+
+    this.submitForm = this.submitForm.bind( this );
+    this.cancelConfirmDelete = this.cancelConfirmDelete.bind( this );
+    this.showConfirmDelete = this.showConfirmDelete.bind( this );
+    this.confirmDelete = this.confirmDelete.bind ( this );
   }
 
-  return (
-    <div>Ist geladen</div>
-  )
+  submitForm() {
+    console.log('submit');
+  }
 
-};
+  // CONFIRM MODAL
+  cancelConfirmDelete() {
+    this.setState( { showConfirmDelete: false, toDelete: {} } );
+  }
+  showConfirmDelete( file ) {
+    this.setState( { toDelete: file, showConfirmDelete: true } );
+  }
+  confirmDelete() {
+    this.props.handleRemoveService( this.state.toDelete._id );
+    this.setState( { showConfirmDelete: false, toDelete: {} } );
+  }
+
+  render() {
+    const { 
+      loading, 
+      ServicesSchema, 
+      servicesTelekom, 
+      servicesOthers
+    } = this.props;
+    if (loading) {
+      return <div>Ladevorgang...</div>
+    }
+
+    return (
+      <ContentWrapper className="backend">
+        <h1>Dienste</h1>
+        <div className="backend__form">
+
+          <Paper className="form-section">
+            <Toolbar>
+              <ToolbarTitle text="Neuen Dienst anlegen" />
+            </Toolbar>
+
+            <ReactAutoForm
+              formClass="autoform has-image-selector"
+              onSubmit={this.props.handleAddService}
+              onSubmitExtra={ {icon: this.state.icon}  }
+              schema={ServicesSchema._schema}
+              buttonProps={ {disabled: false} }
+              type="insert"
+              buttonLabel="Speichern"
+              useFields={['title', 'description', 'featured', 'category']}
+            />
+            <ImageSelector 
+              files={ this.props.files } 
+              current={ this.state.icon }
+              setField={ link => this.setState({ icon: link} ) } 
+            />
+
+
+          </Paper>
+
+
+
+          <Paper className="form-section services-wrapper">
+            <Toolbar>
+              <ToolbarTitle text="Telekom Dienste" />
+            </Toolbar>
+            <ul className="services-list">
+              {
+                (servicesTelekom.length > 0)?
+                  servicesTelekom.map( (service) => {
+                    return <Service 
+                            key={service._id} 
+                            data={ service } 
+                            hasActions={true} 
+                            removeService={this.showConfirmDelete}
+                            />
+                  }) :
+                  <p>Es wurden bislang keine Dienste eingetragen.</p>
+              }
+            </ul>
+          </Paper>  
+          <Paper className="form-section">
+            <Toolbar>
+              <ToolbarTitle text="Partner Dienste" />
+            </Toolbar>
+            <ul className="services-list">
+              {
+                (servicesOthers.length > 0)?
+                  servicesOthers.map( (service) => {
+                    return <Service 
+                            key={service._id} 
+                            data={ service } 
+                            hasActions={true} 
+                            removeService={this.showConfirmDelete}
+                          /> 
+                  }) :
+                  <p>Es wurden bislang keine Dienste eingetragen.</p>
+              }
+            </ul>
+          </Paper>  
+          { 
+            this.state.showConfirmDelete ? 
+              <ConfirmationDialog
+                cancel={ this.cancelConfirmDelete }
+                onConfirm={ this.confirmDelete }
+                info={ this.state.toDelete }
+              /> :
+              ''
+          }
+        </div>
+      </ContentWrapper>
+    )
+  }
+
+}
 
 export default DiensteAdmin;

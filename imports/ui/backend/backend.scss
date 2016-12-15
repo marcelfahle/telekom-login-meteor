@@ -1,6 +1,36 @@
 @import '{}/client/styles/_variables';
 @import '{}/client/styles/_typography';
 
+html {
+  //font-size: 1.375em;
+  font-size: 13px;
+  @include breakpoint( $mob4 ) {
+    font-size: 14px;
+  }
+  @include breakpoint( $tab1 ) {
+    font-size: 15px;
+  }
+  @include breakpoint( $des3 ) {
+    font-size: 16px;
+  }
+  @include breakpoint( $des4 ) {
+    //font-size: 18px;
+  }
+  @include breakpoint( $des6 ) {
+    //font-size: 20px;
+  }
+}
+body {
+  font-size: 1em;
+  font-family: 'TeleGroteskScreen';
+  font-weight: 400;
+  min-width: 320px;
+}
+//main { font-size: 0; } // inline-block white-space hack
+h1, h2, h3, h4, p, li {
+  color: $gray;
+}
+p, li { font-size: 1rem; }
 
 .backend {
   min-height: 300px;

@@ -31,7 +31,7 @@ export default class ConfirmationDialog extends React.Component {
 
     return (
       <Dialog
-        title={`Delete File "${filename}"?`}
+        title={`Delete "${filename}"?`}
         actions={actions}
         modal={false}
         open={true}

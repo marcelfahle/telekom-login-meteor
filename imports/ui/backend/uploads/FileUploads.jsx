@@ -71,15 +71,15 @@ class FileUploads extends React.Component {
       });
 
       uploaderInstance.on('start', () => {
-        console.log('starting');
+        //console.log('starting');
       });
 
       uploaderInstance.on('end', (err, fileObj) => {
-        console.log('On end:', fileObj);
+        //console.log('On end:', fileObj);
       });
 
       uploaderInstance.on('uploaded', (err, fileObj) => {
-        console.log('uploaded', fileObj);
+        //console.log('uploaded', fileObj);
 
         this.setState({
           uploading: [],
@@ -100,6 +100,7 @@ class FileUploads extends React.Component {
   }
 
   uploadProgress () {
+    //TODO: progress
     console.log( 'upload progress' );
   }
 

@@ -101,9 +101,9 @@ export default class SogehtsForm extends React.Component {
             />
             <ImageSelector 
               files={ this.props.files } 
-              current={ this.currentImage('teaserimage') }
-              field="teaserimage" 
-              setField={ link => this.setState({ teaserimage: link} ) } />
+              current={ this.state.teaserimage || this.props.data.teaserimage }
+              setField={ link => this.setState({ teaserimage: link} ) } 
+            />
           </Paper>
 
         </div>

@@ -6,7 +6,7 @@ import BrandBar from './components/BrandBar.jsx';
 import ContentWrapper from './components/ContentWrapper.jsx';
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
-import AppPanel from './components/AppPanel.jsx';
+import AppPanelContainer from './components/AppPanel.jsx';
 
 import './App.scss';
 
@@ -114,7 +114,7 @@ class App extends React.Component {
           <BrandBar />
           <NavBar toggleMenu={this.toggleMenu} toggleAppMenu={this.toggleAppMenu} />
           
-          <AppPanel data={ this.state.dienste } />
+          <AppPanelContainer data={ this.state.dienste } />
         </header>
         <main>
           {this.props.children && React.cloneElement(this.props.children, {

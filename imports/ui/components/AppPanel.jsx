@@ -1,26 +1,23 @@
 import React from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
 import { Link } from 'react-router';
 
 import './AppPanel.scss';
 
 import PanelApp from './PanelApp.jsx';
 
-const AppPanel = ( { data } ) => {
+import { Services } from './../../api/services/services.js';
 
-  
-  const apps = data.telekom.slice(0, 6).map( (app, i) => {
-    return (
-      <PanelApp 
-        key={`PanelApp-${i}`} 
-        data={app}
-      />
-    )
-  });
+const AppPanel = ( { loading, services} ) => {
+
+  if (loading) {
+    return <div>Ladevorgang...</div>
+  }
 
   return (
     <div className="app-panel">
       <ul className="app-panel__apps">
-        { apps }
+        { services.map( (service, i) => <PanelApp key={i} data={service} />) }
       </ul>
 
       <p className="app-panel__more-link">
@@ -31,4 +28,18 @@ const AppPanel = ( { data } ) => {
     </div>
   )
 }
-export default AppPanel;
+
+const AppPanelContainer = createContainer( ({}) => {
+  const dataHandle = Meteor.subscribe('services.telekom.top');
+  const loading = !dataHandle.ready();
+  const services = Services.find({category: 'telekom'}, {limit: 6}).fetch();
+  
+  return {
+    loading,
+    services
+  }
+}, AppPanel)
+
+
+
+export default AppPanelContainer;

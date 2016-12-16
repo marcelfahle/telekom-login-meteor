@@ -9,3 +9,6 @@ Meteor.publish( 'services.telekom', () => {
 Meteor.publish( 'services.others', () => {
   return Services.find({category: 'others'});
 });
+Meteor.publish( 'services.telekom.top', () => {
+  return Services.find({category: 'telekom'}, {limit: 6});
+});

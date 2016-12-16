@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const PanelApp = ( {data} ) => (
   <li className="app-panel__app">
     <Link to="#">
-      <img src={ data.icon } alt={ data.title } />
+      <img src={ data.icon } alt={ data.title } /><br/>
       { data.title }
     </Link>
   </li>

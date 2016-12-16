@@ -1,42 +1,38 @@
 import React from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
 import { Link } from 'react-router';
 
 import Hero from './../components/Hero.jsx';
 import ContentWrapper from './../components/ContentWrapper.jsx';
 import Service from './../components/Service.jsx';
 
+import { Services } from './../../api/services/services.js';
+
+
 import './Dienste.scss';
 
-const Dienste = ({data}) => {
+const DienstePage = ({loading, servicesTelekom, servicesOthers}) => {
 
 
-  //const faqs = (!data.sogehts.faqlist)? null : data.sogehts.faqlist.map( (faq, i) => {
-  //  return <Faq faq={faq} key={`faq${i}`} />
-  //});
-
-  const services = what =>  data.dienste[what].map( (service, i) => {
-    return (
-      <Service 
-        key={`s_${what}_${i}`} 
-        data={ service }
-      />
-    );
-  });
 
   const html = (markup) => {
     return {__html: markup};
   } 
 
+  if (loading) {
+    return <div>Ladevorgang...</div>
+  }
+
 
   return (
-    <div className="dienste">
+    <div className="dienste-page">
 
       <ContentWrapper className="dienste_dienste">
         <h1 className="title--underlined">
           Telekom Dienste
         </h1>
         <ul className="services dienste">
-          { services('telekom')  }
+          { servicesTelekom.map( (service, i) => <Service key={`t${i}`} data={service} />)  }
         </ul>
       </ContentWrapper>
 
@@ -45,7 +41,7 @@ const Dienste = ({data}) => {
           Partner Dienste
         </h1>
         <ul className="services dienste">
-          { services('partners')  }
+          { servicesOthers.map( (service, i) => <Service key={`o${i}`} data={service} />)  }
         </ul>
       </ContentWrapper>
 
@@ -55,5 +51,19 @@ const Dienste = ({data}) => {
   )
 
 };
+
+const Dienste = createContainer( ({}) => {
+  const dataHandleTelekom = Meteor.subscribe('services.telekom');
+  const dataHandleOthers = Meteor.subscribe('services.others');
+  const loading = !dataHandleTelekom.ready() || !dataHandleOthers.ready();
+  // TODO: sort
+  const servicesTelekom = Services.find({category: 'telekom'}).fetch();
+  const servicesOthers = Services.find({category: 'others'}).fetch();
+  return {
+    loading,
+    servicesTelekom,
+    servicesOthers
+  }
+}, DienstePage);
 
 export default Dienste;

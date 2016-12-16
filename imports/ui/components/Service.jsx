@@ -15,7 +15,9 @@ const Service = ( {data, hasActions, removeService} ) => {
   )
   return (
     <li className={(hasActions)? 'service has-actions': 'service'}>
-      <img src={data.icon} alt={ data.title } className="service__icon" />
+      <div className="service__icon--wrapper">
+        <img src={data.icon} alt={ data.title } className="service__icon" />
+      </div>
       <div className="service__info">
         <h3>{ data.title }</h3>
         <p>{ data.description }</p>

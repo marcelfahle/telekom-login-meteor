@@ -4,13 +4,15 @@ import IconButton from 'material-ui/IconButton';
 import './Service.scss';
 
 
-const Service = ( {data, hasActions, removeService} ) => {
+const Service = ( {data, hasActions, removeService, editService} ) => {
   const actions = (
     <div className="actions">
       <IconButton onClick={ () => removeService({_id: data._id, name: data.title}) }>
         <i className="material-icons">delete_forever</i>
-    </IconButton>
-      <a href="#"><i className="material-icons">mode_edit</i></a>
+      </IconButton>
+      <IconButton onClick={ () => editService( data ) }>
+        <a href="#"><i className="material-icons">mode_edit</i></a>
+      </IconButton>
     </div>
   )
   return (

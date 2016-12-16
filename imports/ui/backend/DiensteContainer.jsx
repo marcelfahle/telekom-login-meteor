@@ -6,8 +6,9 @@ import { UserFiles } from '../../api/user_files/UserFiles.js';
 import DiensteAdmin from './DiensteAdmin.jsx';
 
 import { 
-  insertService ,
-  removeService
+  insertService,
+  removeService,
+  updateService
 } from './../../api/services/methods.js';
 
 
@@ -29,6 +30,14 @@ const handleRemoveService = ( serviceId ) => {
     }
   });
 };
+const handleUpdateService = ( modifiedService, originalService ) => {
+  updateService.call( modifiedService, (err) => {
+    if (err)
+      Bert.alert(err.reason, 'danger');
+    else
+      Bert.alert(`Der Dienst ${modifiedService.modifier.title || originalService.title} wurde aktualisert.`, 'success');
+  });
+};
 
 
 export default DiensteContainer = createContainer( ({ params }) => {
@@ -45,6 +54,7 @@ export default DiensteContainer = createContainer( ({ params }) => {
     ServicesSchema,
     handleAddService,
     handleRemoveService,
+    handleUpdateService,
     servicesTelekom,
     servicesOthers,
     files

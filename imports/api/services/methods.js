@@ -14,6 +14,21 @@ export const insertService = new ValidatedMethod({
   }
 });
 
+export const updateService = new ValidatedMethod({
+  name: 'Services.methods.update',
+  validate: new SimpleSchema(
+    { 
+      id: { type: String},
+      modifier: { type: Services.simpleSchema() }
+    }
+  ).validator(),
+  run( { id, modifier } ) {
+    Services.update(id, {
+      $set: modifier
+    });
+  }
+});
+
 export const removeService = new ValidatedMethod( {
   name: 'Services.methods.remove',
   validate: new SimpleSchema({

@@ -29,7 +29,7 @@
 
 }
 .service__info {
-  width: auto;
+  width: 100%;
   h3 {
     @include h1-underlined;
     margin-bottom: rem(10px);

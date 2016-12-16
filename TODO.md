@@ -8,8 +8,8 @@
 - [ ] Page "Login mit Telekom" im CMS vorbereiten
 - [ ] Die Möglichkeit unter "Funktionen" neue Funktionen hinzuzufügen fehlt noch
 - [ ] Die Möglichkeit die Links im Footer zu ändern oder hinzuzufügen fehlt noch (z. B. für die Page "Login mit Telekom")
-- [ ] Die "So geht's" Page vorbereiten wie im Clickdummy
-- [ ] CMS mit Sprachenswitch DE/EN vorbereiten
+- [x] Die "So geht's" Page vorbereiten wie im Clickdummy
+- [x] CMS mit Sprachenswitch DE/EN vorbereiten
 - [ ] alle internen/externen Links checken
 - [ ] Zip-Download für Übergabe bereitstellen
 - [ ] Zugang zum CMS mit IBS aktivieren

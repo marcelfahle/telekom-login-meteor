@@ -32,7 +32,7 @@ const AppPanel = ( { loading, services} ) => {
 const AppPanelContainer = createContainer( ({}) => {
   const dataHandle = Meteor.subscribe('services.telekom.top');
   const loading = !dataHandle.ready();
-  const services = Services.find({category: 'telekom'}, {limit: 6}).fetch();
+  const services = Services.find({category: 'telekom'}, {limit: 6, sort: {title: 1}}).fetch();
   
   return {
     loading,

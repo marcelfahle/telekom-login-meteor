@@ -57,8 +57,8 @@ const Dienste = createContainer( ({}) => {
   const dataHandleOthers = Meteor.subscribe('services.others');
   const loading = !dataHandleTelekom.ready() || !dataHandleOthers.ready();
   // TODO: sort
-  const servicesTelekom = Services.find({category: 'telekom'}).fetch();
-  const servicesOthers = Services.find({category: 'others'}).fetch();
+  const servicesTelekom = Services.find({category: 'telekom'}, {sort: {title:1}}).fetch();
+  const servicesOthers = Services.find({category: 'others'}, {sort: {title:1}}).fetch();
   return {
     loading,
     servicesTelekom,

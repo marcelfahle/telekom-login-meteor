@@ -63,21 +63,6 @@ export default class LoginMitTelekomForm extends React.Component {
           </Paper>
 
 
-          <Paper className="form-section">
-            <Toolbar>
-              <ToolbarTitle text="News" />
-            </Toolbar>
-            <ReactAutoForm
-              onSubmit={this.props.handleUpdate}
-              buttonProps={ {disabled: false} }
-              schema={this.props.schema._schema}
-              doc={this.props.data}
-              type="update"
-              buttonLabel="Speichern"
-              useFields={['newsactive', 'newstitle', 'newscopy', 'newscta', 'newsctalabel', 'newsctaurl']}
-            />
-          </Paper>
-
 
 
           <Paper className="form-section">
@@ -92,21 +77,6 @@ export default class LoginMitTelekomForm extends React.Component {
               type="update"
               buttonLabel="Speichern"
               useFields={['title', 'titlecopy', 'bullet1head', 'bullet1copy', 'bullet2head', 'bullet2copy', 'bullet3head', 'bullet3copy']}
-            />
-          </Paper>
-
-          <Paper className="form-section">
-            <Toolbar>
-              <ToolbarTitle text="Services Teaser" />
-            </Toolbar>
-            <ReactAutoForm
-              onSubmit={this.props.handleUpdate}
-              buttonProps={ {disabled: false} }
-              schema={this.props.schema._schema}
-              doc={this.props.data}
-              type="update"
-              buttonLabel="Speichern"
-              useFields={['serviceshead', 'servicescopy']}
             />
           </Paper>
 

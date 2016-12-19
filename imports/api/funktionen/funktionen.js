@@ -157,6 +157,22 @@ const FunktionenSchema = new SimpleSchema({
 
 
 
+  seotitle: {
+    type: String,
+    label: "Page-Title",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  seodescription: {
+    type: String,
+    label: "Page-Description",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+
+
+
+
   "updated": {
     type: Date,
     label: "Letztes Update",

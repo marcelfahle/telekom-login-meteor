@@ -61,6 +61,19 @@ const SogehtsSchema = new SimpleSchema({
     }
   },
 
+  title: {
+    type: String,
+    label: "Title",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  titlecopy: {
+    type: String,
+    label: "Title copy",
+    optional: true,
+    materialForm: textAreaMaterialForm
+  },
+
 
   faq1head: Object.assign({}, faqHead, {label: "1 Q"}), 
   faq1copy: Object.assign({}, faqCopy, {label: "1 A"}),

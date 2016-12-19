@@ -19,26 +19,38 @@ const Footer = ({settings}) => (
       <h4>Folgen Sie uns im Social Web:</h4>
       <nav>
         <ul>
+          { settings.showlinkfb ?
+            <li>
+              <a href={settings.linkfb || '#' }>
+                <img src="/images/footer-fb.svg" alt="Facebook" />
+              </a>
+            </li> :
+              ''
+          }
+          { settings.showlinktw ?
           <li>
-            <a href="#">
-              <img src="/images/footer-fb.svg" alt="Facebook" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
+            <a href={settings.linktw || '#' }>
               <img src="/images/footer-twitter.svg" alt="Twitter" />
             </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="/images/footer-google.svg" alt="google plus" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="/images/footer-share.svg" alt="Share" />
-            </a>
-          </li>
+          </li> :
+              ''
+          }
+          { settings.showlinkgoogle ?
+            <li>
+              <a href={settings.linkgoogle || '#' }>
+                <img src="/images/footer-google.svg" alt="google plus" />
+              </a>
+            </li> :
+              ''
+          }
+          { settings.showlinkshare ?
+            <li>
+              <a href={settings.linkshare || '#' }>
+                <img src="/images/footer-share.svg" alt="Share" />
+              </a>
+            </li> :
+              ''
+          }
         </ul>
       </nav>
     </div>
@@ -50,10 +62,10 @@ const Footer = ({settings}) => (
       <nav>
         <ul>
           {/*<li><a href="#">Geschäftskunden</a></li>*/}
-          <li><a href="http://www.telekom.de/hilfe/vertrag-meine-daten/login-daten-passwoerter" target="_blank">Telekom Hilft Community</a></li>
+          <li><a href={settings.linktelekomhilft || '#'} target="_blank">Telekom Hilft Community</a></li>
           {/*<li><a href="#">FAQ-Liste</a></li>*/}
-          <li><a href="http://www.telekom.com/impressum" target="_blank">Impressum</a></li>
-          <li><a href="http://www.telekom.de/datenschutz-ganz-einfach" target="_blank">Datenschutz</a></li>
+          <li><a href={settings.linkimpressum || ''} target="_blank">Impressum</a></li>
+          <li><a href={settings.linkdatenschutz || '' }  target="_blank">Datenschutz</a></li>
         </ul>
       </nav>
     </div>

@@ -9,7 +9,6 @@ import { update } from './../../api/home/methods.js';
 
 const handleUpdate = (doc, updatedFields, extraFields) => {
   const allFields = Object.assign({}, updatedFields, extraFields);
-  console.log('calling it');
   update.call( {
     docId: doc._id,
     doc: allFields

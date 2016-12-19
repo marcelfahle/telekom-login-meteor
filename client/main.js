@@ -19,6 +19,7 @@ import FunktionenFormContainer from './../imports/ui/backend/FunktionenFormConta
 import SogehtsFormContainer from './../imports/ui/backend/SogehtsFormContainer.jsx';
 import FileUploadsContainer from './../imports/ui/backend/uploads/FileUploadContainer.jsx';
 import DiensteContainer from './../imports/ui/backend/DiensteContainer.jsx';
+import SettingsPage from './../imports/ui/backend/Settings';
 
 import { Settings } from './../imports/api/settings/settings';
 
@@ -46,6 +47,7 @@ Meteor.startup( () => {
         <Route path="funktionen" component={ FunktionenFormContainer } />
         <Route path="so-gehts" component={ SogehtsFormContainer } />
         <Route path="dienste" component={ DiensteContainer } />
+        <Route path="settings" component={ SettingsPage } />
 
         <Route path="uploads" component={ FileUploadsContainer } />
 

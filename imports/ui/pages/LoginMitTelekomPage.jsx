@@ -48,22 +48,22 @@ const LoginMitTelekomPage = ({ loading, data } ) => {
           <div className="home__intro--keyfeature">
             <div className="keyfeature-imgwrapper">
               <img src="/images/home-feature1-bequem.svg" 
-                alt="Einfach bequem" />
+                alt={data.bullet1head} />
             </div>
             <h2>{data.bullet1head}</h2>
             <p>{data.bullet1copy}</p>
           </div>
           <div className="home__intro--keyfeature">
             <div className="keyfeature-imgwrapper">
-              <img src="/images/home-feature2-flexibel.svg" 
-                alt="Einfach flexibel" />
+              <img src="/images/login-icon-sicher.svg" 
+                alt={data.bullet2head} />
             </div>
             <h2>{data.bullet2head}</h2>
             <p>{data.bullet2copy}</p>
           </div>
           <div className="home__intro--keyfeature">
             <div className="keyfeature-imgwrapper">
-              <img src="/images/home-feature3-sicher.svg" alt="Einfach sicher" />
+              <img src="/images/login-icon-sicher2.svg" alt={data.bullet3head} />
             </div>
             <h2>{data.bullet3head}</h2>
             <p>{data.bullet3copy}</p>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="130px" height="144px" viewBox="0 0 130 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon Datenschutz</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="49.9726087%" y1="111.76%" x2="49.9726087%" y2="-2.61313725%" id="linearGradient-1">
+            <stop stop-color="#A6A6AE" offset="0%"></stop>
+            <stop stop-color="#DADAE2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="49.9486111%" y1="100.171722%" x2="49.9486111%" y2="0%" id="linearGradient-2">
+            <stop stop-color="#E20074" offset="0%"></stop>
+            <stop stop-color="#FF339C" offset="100%"></stop>
+        </linearGradient>
+        <path d="M64.7173913,14.1176471 L14.1304348,14.1176471 L14.1304348,63.2470588 L14.1304348,73.1294118 C14.1304348,108.988235 36.7391304,123.952941 64.7173913,123.952941 C92.6956522,123.952941 115.869565,101.082353 115.869565,73.1294118 L115.869565,63.2470588 L115.869565,14.1176471 L64.7173913,14.1176471 L64.7173913,14.1176471 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="101.73913" height="109.835294" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Login-mit-Telekom-(Optional)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Login-mit-Telekom-03" transform="translate(-655.000000, -951.000000)">
+            <g id="Icon-Datenschutz" transform="translate(655.000000, 951.000000)">
+                <path d="M65,0 L0,0 L0,79.0588235 C0,114.917647 29.1086957,144 65,144 C100.891304,144 130,114.917647 130,79.0588235 L130,0 L65,0 L65,0 Z" id="Shape" fill="url(#linearGradient-1)"></path>
+                <path d="M64.7173913,25.4117647 L14.1304348,25.4117647 L14.1304348,68.8941176 L14.1304348,81.6 C14.1304348,109.835294 36.4565217,132.423529 64.7173913,132.423529 C92.9782609,132.423529 115.869565,109.835294 115.869565,81.6 L115.869565,68.8941176 L115.869565,25.4117647 L64.7173913,25.4117647 L64.7173913,25.4117647 Z" id="Shape" fill="#DADAE2" style="mix-blend-mode: multiply;"></path>
+                <use id="Shape" stroke="#CC0069" mask="url(#mask-4)" stroke-width="6" fill="url(#linearGradient-2)" xlink:href="#path-3"></use>
+                <path d="M65,73.4117647 C73.4782609,73.4117647 80.2608696,66.6352941 80.2608696,58.1647059 L80.2608696,48.8470588 C80.2608696,40.3764706 73.4782609,33.6 65,33.6 C56.5217391,33.6 49.7391304,40.3764706 49.7391304,48.8470588 L49.7391304,58.1647059 C50.0217391,66.6352941 56.8043478,73.4117647 65,73.4117647 L65,73.4117647 Z M81.673913,79.6235294 L48.326087,79.6235294 C39.8478261,79.6235294 33.0652174,85.2705882 33.0652174,93.7411765 L96.6521739,93.7411765 C96.9347826,85.2705882 90.1521739,79.6235294 81.673913,79.6235294 L81.673913,79.6235294 Z" id="Shape" fill="#FFFFFF" opacity="0.9"></path>
+            </g>
+        </g>
+    </g>
+</svg>

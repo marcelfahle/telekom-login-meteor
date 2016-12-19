@@ -10,6 +10,9 @@ import './../../api/sogehts/methods.js';
 import { Settings } from './../../api/settings/settings.js';
 import './../../api/settings/methods.js';
 
+import { LoginMitTelekom } from './../../api/loginmittelekom/loginmittelekom.js';
+import './../../api/loginmittelekom/methods.js';
+
 import Data from './../../api/data.json';
 
 Meteor.startup( () => {
@@ -33,5 +36,10 @@ Meteor.startup( () => {
   const SettingsExists = Settings.find().count() !== 0;
   if (!SettingsExists) {
     Settings.insert(Data.settings);
+  }
+
+  const LoginMitTelekomExists = LoginMitTelekom.find().count() !== 0;
+  if (!LoginMitTelekomExists) {
+    LoginMitTelekom.insert(Data.loginmittelekom);
   }
 });

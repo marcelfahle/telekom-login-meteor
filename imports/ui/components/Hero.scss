@@ -191,6 +191,13 @@
 
 .last-action-hero {
   padding-bottom: 0;
+  .hero__display {
+    p:nth-child(2):not(.hero-cta) {
+      @include copy;
+      color: #fff;
+
+    }
+  }
 }
 
 

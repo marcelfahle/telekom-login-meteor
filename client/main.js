@@ -8,6 +8,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import App from './../imports/ui/App.jsx';
 import Test  from './../imports/ui/Test';
 import HomeContainer from './../imports/ui/pages/HomeContainer.jsx';
+import LoginMitTelekomPage from './../imports/ui/pages/LoginMitTelekomPage.jsx';
 import FunktionenContainer from './../imports/ui/pages/Funktionen.jsx';
 import SoGehtsContainer from './../imports/ui/pages/SoGehts.jsx';
 import Dienste from './../imports/ui/pages/Dienste.jsx';
@@ -19,6 +20,7 @@ import FunktionenFormContainer from './../imports/ui/backend/FunktionenFormConta
 import SogehtsFormContainer from './../imports/ui/backend/SogehtsFormContainer.jsx';
 import FileUploadsContainer from './../imports/ui/backend/uploads/FileUploadContainer.jsx';
 import DiensteContainer from './../imports/ui/backend/DiensteContainer.jsx';
+import LoginMitTelekomContainer from './../imports/ui/backend/LoginMitTelekomContainer.jsx';
 import SettingsPage from './../imports/ui/backend/Settings';
 
 import { Settings } from './../imports/api/settings/settings';
@@ -40,6 +42,7 @@ Meteor.startup( () => {
         <Route path="/funktionen" component={ FunktionenContainer } />
         <Route path="/so-gehts" component={ SoGehtsContainer } />
         <Route path="/dienste-uebersicht" component={ Dienste } />
+        <Route path="/login-mit-telekom" component={ LoginMitTelekomPage } />
       </Route>
       <Route path="/admin" component={ BackendContainer }>
         <IndexRoute component={ Dashboard } />
@@ -47,6 +50,7 @@ Meteor.startup( () => {
         <Route path="funktionen" component={ FunktionenFormContainer } />
         <Route path="so-gehts" component={ SogehtsFormContainer } />
         <Route path="dienste" component={ DiensteContainer } />
+        <Route path="login-mit-telekom" component={ LoginMitTelekomFormContainer } />
         <Route path="settings" component={ SettingsPage } />
 
         <Route path="uploads" component={ FileUploadsContainer } />

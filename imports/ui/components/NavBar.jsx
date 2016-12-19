@@ -45,6 +45,7 @@ const NavBar = ({settings, toggleMenu, toggleAppMenu}) => {
               <li><Link onClick={toggleMenu} to="/">Start</Link></li>
               <li><Link onClick={toggleMenu} to="/funktionen">Funktionen</Link></li>
               <li><Link onClick={toggleMenu} to="/so-gehts">So geht's</Link></li>
+              <li><Link onClick={toggleMenu} to="/login-mit-telekom">Login mit Telekom</Link></li>
             </ul>
           </nav>
         </ContentWrapper>

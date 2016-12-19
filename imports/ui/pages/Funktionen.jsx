@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { createContainer } from 'meteor/react-meteor-data';
+import Helmet from 'react-helmet';
 
 import { Funktionen } from './../../api/funktionen/funktionen.js';
 
@@ -20,6 +21,12 @@ const FunktionenPage = ({loading, data}) => {
   }
   return (
     <div className="funktionen">
+      <Helmet
+        title={data.seotitle}
+        meta={[
+          {"name": "description", "content": data.seodescription}
+        ]}
+      />
       <Hero img={data.heroimage}>
         <p><span dangerouslySetInnerHTML={ createMarkup( data.herobold ) } /></p>
         <p dangerouslySetInnerHTML={ createMarkup( data.heroregular ) } />

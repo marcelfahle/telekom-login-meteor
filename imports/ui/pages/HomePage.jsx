@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Helmet from 'react-helmet';
 
 import Hero from './../components/Hero.jsx';
 import News from './../components/News.jsx';
@@ -14,12 +15,18 @@ function createMarkup( content  ) {
   return {__html: content};
 }
 
-const HomePage = ({ loading, home, data } ) => {
+const HomePage = ({ loading, data } ) => {
   if (loading) {
     return <div>Ladevorgang...</div>;
   }
   return(
     <div className="home">
+      <Helmet
+        title={data.seotitle}
+        meta={[
+          {"name": "description", "content": data.seodescription}
+        ]}
+      />
       <Hero 
         img={ data.heroimage }
         aspectClass="aspect16-5plus"

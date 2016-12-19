@@ -48,7 +48,7 @@ export default class SogehtsForm extends React.Component {
               type="update"
               ref={(form) => { this.headerform = form; }}
               buttonLabel="Speichern"
-              useFields={['herobold', 'heroregular']}
+              useFields={['herobold', 'heroregular', 'title', 'titlecopy']}
             />
 
             <ImageSelector 

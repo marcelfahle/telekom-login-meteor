@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { createContainer } from 'meteor/react-meteor-data';
+import Helmet from 'react-helmet';
 
 import Hero from './../components/Hero.jsx';
 import ContentWrapper from './../components/ContentWrapper.jsx';
@@ -30,6 +31,12 @@ const SogehtsPage = ({loading, data}) => {
 
   return (
     <div className="so-gehts">
+      <Helmet
+        title={data.seotitle}
+        meta={[
+          {"name": "description", "content": data.seodescription}
+        ]}
+      />
       <Hero img={data.heroimage}>
         <p><span dangerouslySetInnerHTML={ createMarkup( data.herobold ) } /></p>
         <p dangerouslySetInnerHTML={ createMarkup( data.heroregular ) } />

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames';
+import Helmet from 'react-helmet';
 
 import BrandBar from './components/BrandBar.jsx';
 import ContentWrapper from './components/ContentWrapper.jsx';
@@ -108,12 +109,22 @@ class App extends React.Component {
       'menu': this.state.menu,
       'show-app-panel': this.state.appPanel
     });
+
     const { settings, loading } = this.props;
+
     if (loading) {
       return <div>Wird geladen...</div>;
     }
+
     return(
       <div className="viewport" onClick={this.clickOnViewport}>
+        <Helmet
+          title={settings.seotitle || 'Deutsche Telekom Login'}
+          defaultTitle={settings.seotitle || 'Deutsche Telekom Login'}
+          meta={[
+            {"name": "description", "content": settings.seodescription }
+          ]}
+        />
         <header className={headerClasses}>
           <BrandBar />
           <NavBar 
@@ -125,7 +136,8 @@ class App extends React.Component {
         </header>
         <main>
           {this.props.children && React.cloneElement(this.props.children, {
-            data: this.state
+            data: this.state,
+            settings
           })}
         </main>
         <Footer settings={settings} />

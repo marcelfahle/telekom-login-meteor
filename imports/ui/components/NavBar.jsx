@@ -28,7 +28,7 @@ const NavBar = ({settings, toggleMenu, toggleAppMenu}) => {
           <a href="#" onClick={toggleAppMenu} className="app-link">
             <img src="/images/icon-apps.svg" alt="Dienste" />
           </a>
-          <a href={settings.link.help || '#'} className="help-link">
+          <a href={settings.linkhelp || '#'} className="help-link">
             <img src="/images/icon-help.svg" alt="Hilfe" />
           </a>
           {/*

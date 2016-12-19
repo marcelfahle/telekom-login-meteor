@@ -10,7 +10,10 @@ const Footer = ({settings}) => (
       <ul>
         <li><Link to="/funktionen">Funktionen</Link></li>
         <li><Link to="/so-gehts">So geht's</Link></li>
-        {/*<li><Link to="/login-mit-telekom">Login mit Telekom</Link></li>*/}
+        { settings.loginwithtelekom ?
+            <li><Link to="/login-mit-telekom">Login mit Telekom</Link></li> :
+            ''
+        }
         {/*<li><Link to="/telekom-login-fuer-ihre-website">Telekom Login für Ihre Website</Link></li>*/}
       </ul>
     </nav>

@@ -56,10 +56,7 @@ class DiensteAdmin extends React.Component {
     this.setState({editMode: false, toEdit: {}  });
   }
   confirmEdit( originalService, updatedFields, extraFields) {
-    // that's a bit weird, but essentially we create a new object sans ID
-    // which represents our modifier of the original data. We then tack that
-    // onto a brand new object which just consists of an ID property and the
-    // modifier. That way it's easier to validate.
+    // merge update and extra fields (ususally the image) to new object
     const allUpdatedFields = Object.assign({}, updatedFields, extraFields);
     this.props.handleUpdateService( {id: originalService._id, modifier: allUpdatedFields }, originalService  );
     this.setState({editMode: false, toEdit: {}  });
@@ -102,8 +99,6 @@ class DiensteAdmin extends React.Component {
               current={ this.state.icon }
               setField={ link => this.setState({ icon: link} ) } 
             />
-
-
           </Paper>
 
 
@@ -128,6 +123,7 @@ class DiensteAdmin extends React.Component {
               }
             </ul>
           </Paper>  
+
           <Paper className="form-section">
             <Toolbar>
               <ToolbarTitle text="Partner Dienste" />
@@ -148,6 +144,7 @@ class DiensteAdmin extends React.Component {
               }
             </ul>
           </Paper>  
+
           { 
             this.state.showConfirmDelete ? 
               <ConfirmationDialog

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 //import rootRoute from 'pages/routes';
 
@@ -19,6 +20,8 @@ import SogehtsFormContainer from './../imports/ui/backend/SogehtsFormContainer.j
 import FileUploadsContainer from './../imports/ui/backend/uploads/FileUploadContainer.jsx';
 import DiensteContainer from './../imports/ui/backend/DiensteContainer.jsx';
 
+import { Settings } from './../imports/api/settings/settings';
+
 //import './index.html';
 
 
@@ -31,13 +34,13 @@ const onUpdate = () => {
 Meteor.startup( () => {
   render(
     <Router onUpdate={ () => onUpdate() } history={ browserHistory }>
-      <Route path="/"  component={ App }>
+      <Route path="/"  component={ AppContainer }>
         <IndexRoute component={ HomeContainer } />
         <Route path="/funktionen" component={ FunktionenContainer } />
         <Route path="/so-gehts" component={ SoGehtsContainer } />
         <Route path="/dienste-uebersicht" component={ Dienste } />
       </Route>
-      <Route path="/admin" component={ BackendLayout }>
+      <Route path="/admin" component={ BackendContainer }>
         <IndexRoute component={ Dashboard } />
         <Route path="home" component={ HomeFormContainer } />
         <Route path="funktionen" component={ FunktionenFormContainer } />
@@ -51,3 +54,25 @@ Meteor.startup( () => {
     , document.getElementById('root')
   );
 });
+
+const AppContainer = createContainer( ({ children }) => {
+  const dataHandle = Meteor.subscribe('settings');
+  const loading = !dataHandle.ready();
+  const settings = Settings.findOne();
+  return {
+    children,
+    loading,
+    settings
+  }
+}, App);
+const BackendContainer = createContainer( ({ children }) => {
+  const dataHandle = Meteor.subscribe('settings');
+  const loading = !dataHandle.ready();
+  const settings = Settings.findOne();
+  return {
+    children,
+    loading,
+    settings
+  }
+}, BackendLayout);
+

@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import './Footer.scss';
 
 
-const Footer = () => (
+const Footer = ({settings}) => (
   <footer>
     <nav className="footer__nav">
       <ul>
@@ -44,7 +44,9 @@ const Footer = () => (
     </div>
 
     <div className="footer__meta">
-      <p className="footer__copyright">© 2016 Deutsche Telekom AG</p>
+      <p className="footer__copyright">
+        { settings.copyright || '' }
+      </p>
       <nav>
         <ul>
           {/*<li><a href="#">Geschäftskunden</a></li>*/}

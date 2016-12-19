@@ -22,7 +22,8 @@ const muiTheme = getMuiTheme({
 });
 
 
-export const BackendLayout = ({ children }) => {
+export const BackendLayout = ({ children, loading, settings }) => {
+  if (loading) { return <div>Backend wird geladen</div>; }
   return (
     <MuiThemeProvider muiTheme={muiTheme}>
       <div className="viewport backend-wrapper">

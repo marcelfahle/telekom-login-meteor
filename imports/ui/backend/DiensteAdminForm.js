@@ -16,6 +16,8 @@ class DiensteAdminForm extends React.Component {
     this.state = {
       icon: this.props.doc.icon || ""
     }
+
+
   }
 
 

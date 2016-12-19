@@ -1,4 +1,23 @@
 {
+  "settings": {
+    "loginwithtelekom": false,
+    "linklogin": "http://telekom.de",
+    "linkhelp": "http://telekom.de",
+    "linkimpressum": "http://telekom.de",
+    "linkdatenschutz": "http://telekom.de",
+    "linktelekomhilft": "http://telekom.de",
+    "copyright": "© 2016 Deutsche Telekom AG",
+    "linkfb": "http://facebook.com",
+    "showlinkfb": true,
+    "linktw": "http://twitter.com",
+    "showlinktw": true,
+    "linkgoogle": "http://google.com",
+    "showlinkgoogle": true,
+    "linkshare": "http://facebook.com",
+    "showlinkshare": true,
+    "seotitle": "SEO Title",
+    "seodescription": "SEO Beschreibung"
+  },
   "funktionen" : {
     "herobold": "EIN LOGIN.",
     "heroregular": "VIELE MÖGLICHKEITEN.",

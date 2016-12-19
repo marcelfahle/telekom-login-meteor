@@ -7,6 +7,9 @@ import './../../api/funktionen/methods.js';
 import { Sogehts } from './../../api/sogehts/sogehts.js';
 import './../../api/sogehts/methods.js';
 
+import { Settings } from './../../api/settings/settings.js';
+import './../../api/settings/methods.js';
+
 import Data from './../../api/data.json';
 
 Meteor.startup( () => {
@@ -24,5 +27,11 @@ Meteor.startup( () => {
   const SogehtsExists = Sogehts.find().count() !== 0;
   if (!SogehtsExists) {
     Sogehts.insert(Data.sogehts);
+  }
+
+
+  const SettingsExists = Settings.find().count() !== 0;
+  if (!SettingsExists) {
+    Settings.insert(Data.settings);
   }
 });

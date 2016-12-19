@@ -108,11 +108,18 @@ class App extends React.Component {
       'menu': this.state.menu,
       'show-app-panel': this.state.appPanel
     });
+    const { settings, loading } = this.props;
+    if (loading) {
+      return <div>Wird geladen...</div>;
+    }
     return(
       <div className="viewport" onClick={this.clickOnViewport}>
         <header className={headerClasses}>
           <BrandBar />
-          <NavBar toggleMenu={this.toggleMenu} toggleAppMenu={this.toggleAppMenu} />
+          <NavBar 
+            settings={settings}
+            toggleMenu={this.toggleMenu} 
+            toggleAppMenu={this.toggleAppMenu} />
           
           <AppPanelContainer data={ this.state.dienste } />
         </header>
@@ -121,7 +128,7 @@ class App extends React.Component {
             data: this.state
           })}
         </main>
-        <Footer />
+        <Footer settings={settings} />
       </div>
     )
   }

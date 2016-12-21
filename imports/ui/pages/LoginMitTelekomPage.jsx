@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import{ createContainer } from 'meteor/react-meteor-data';
 import { Link } from 'react-router';
 import Helmet from 'react-helmet';
@@ -74,7 +75,16 @@ const LoginMitTelekomPage = ({ loading, data } ) => {
       </ContentWrapper>
 
       <div className="login-partners">
+        <h1 className="title--center">{data.partnerstitle}</h1>
+        <p className="title__copy">{data.partnerscopy}</p>
       
+        <img src={data.partnerslogos} className="login-partners__logos" alt=""/>
+
+        <ReactMarkdown 
+          className="login-partners__cta"
+          source={ data.partnerscta } 
+         />
+
       
       </div>
 

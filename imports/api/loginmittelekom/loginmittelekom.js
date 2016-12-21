@@ -50,6 +50,37 @@ const LoginMitTelekomSchema = new SimpleSchema({
       id: 'heroimage',
     }
   },
+
+
+  partnerstitle: {
+    type: String,
+    label: "Title",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  partnerscopy: {
+    type: String,
+    label: "Copy",
+    optional: true,
+    materialForm: textAreaMaterialForm
+  },
+  partnerslogos: {
+    type: String,
+    label: "Logos",
+    optional: true,
+    materialForm: {
+      disabled: true,
+      id: 'heroimage',
+    }
+  },
+  partnerscta: {
+    type: String,
+    label: "Call-to-Action (Markdown)",
+    optional: true,
+    materialForm: textAreaMaterialForm
+  },
+
+  
   
   
 

@@ -20,6 +20,7 @@ export default class LoginMitTelekomForm extends React.Component {
 
     this.state = {
       heroimage: props.heroimage, 
+      partnerslogos: props.partnerslogos, 
       footerheroimage: props.footerheroimage
     }
   }
@@ -38,8 +39,6 @@ export default class LoginMitTelekomForm extends React.Component {
             <Toolbar>
               <ToolbarTitle text="Header" />
             </Toolbar>
-
-
 
             <ReactAutoForm
               formClass="autoform has-image-selector"
@@ -78,6 +77,35 @@ export default class LoginMitTelekomForm extends React.Component {
               buttonLabel="Speichern"
               useFields={['title', 'titlecopy', 'bullet1head', 'bullet1copy', 'bullet2head', 'bullet2copy', 'bullet3head', 'bullet3copy']}
             />
+          </Paper>
+
+
+
+
+          <Paper className="form-section">
+            <Toolbar>
+              <ToolbarTitle text="Partner" />
+            </Toolbar>
+
+            <ReactAutoForm
+              formClass="autoform has-image-selector"
+              onSubmit={this.props.handleUpdate}
+              onSubmitExtra={{ partnerslogos: this.state.partnerslogos}}
+              schema={this.props.schema._schema}
+              doc={this.props.data}
+              buttonProps={ {disabled: false} }
+              type="update"
+              ref={(form) => { this.headerform = form; }}
+              buttonLabel="Speichern"
+              useFields={['partnerstitle', 'partnerscopy', 'partnerscta']}
+            />
+
+            <ImageSelector 
+              files={ this.props.files } 
+              current={ this.state.partnerslogos || this.props.data.partnerslogos}
+              setField={ link => this.setState({ partnerslogos: link} ) } 
+            />
+            
           </Paper>
 
 

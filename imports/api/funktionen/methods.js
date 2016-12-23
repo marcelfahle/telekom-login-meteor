@@ -21,11 +21,9 @@ export const addFunktion = new ValidatedMethod({
     doc: {type: [FunktionSchema] }
   }).validator({clean:true}),
   run( {doc, docId} ) {
-    console.log('updating', docId, doc);
     Funktionen.update( docId, {
       $set: {"funktionen": doc}
     });
-    console.log('after update', docId, doc);
   }
 });
 export const updateFunktion = new ValidatedMethod({

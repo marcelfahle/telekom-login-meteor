@@ -7,6 +7,7 @@ import { Funktionen } from './../../api/funktionen/funktionen.js';
 
 import Hero from './../components/Hero.jsx';
 import ContentWrapper from './../components/ContentWrapper.jsx';
+import Funktion from './../components/Funktion';
 
 import './Funktionen.scss';
 
@@ -40,36 +41,11 @@ const FunktionenPage = ({loading, data}) => {
       </ContentWrapper>
 
 
-      <ContentWrapper 
-         style={{backgroundColor: data.bullet1color}} 
-          className="content-wrapper-full funktionen__functions-list">
-
-        <div className="content-wrapper function align-left" >
-          <div className="function__img">
-            <img src="/images/functions1-everywhere.jpg" width="557" alt={data.bullet1head} /> 
-          </div>
-          <div className="function__copy">
-            <h2>{data.bullet1head}</h2>
-            <p>{data.bullet1copy}</p>
-          </div>
-        </div>
-      </ContentWrapper>
-
-
-      <ContentWrapper 
-          style={{backgroundColor: data.bullet2color}} 
-          className="content-wrapper-full funktionen__functions-list">
-        <div className="content-wrapper function align-left">
-          <div className="function__img">
-            <img src="/images/functions2-pin.png" width="412" alt={data.bullet2head} /> 
-          </div>
-          <div className="function__copy">
-            <h2>{data.bullet2head}</h2>
-            <p>{data.bullet2copy}</p>
-          </div>
-        </div>
-      </ContentWrapper>
-
+      {
+        (data.funktionen && data.funktionen.length > 0) ?
+          data.funktionen.map( (funktion, i) => <Funktion data={funktion} key={`f${i}`} /> ) :
+          ''
+      }
 
       <ContentWrapper className="login-settings">
         <div className="login-settings__img">

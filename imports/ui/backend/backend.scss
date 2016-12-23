@@ -83,3 +83,31 @@ p, li { font-size: 1rem; }
 .backend__form {
   //margin: 0 auto;
 }
+
+.has-subforms {
+  padding-bottom: 40px;
+}
+.funktion-form .autoform {
+  > div:last-child {
+    margin-top: 180px;
+  }
+}
+.subform, .subform__actions {
+  margin: 20px;
+  position: relative;
+}
+.subform button.subform__destroy {
+  position: absolute !important;
+  bottom: 10px;
+  left: 120px;
+}
+.subform__notice {
+  margin: 20px;
+  font-size: 14px !important;
+}
+input[type='checkbox'] + div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+

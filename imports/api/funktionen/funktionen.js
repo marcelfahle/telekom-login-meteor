@@ -14,13 +14,55 @@ SimpleSchema.extendOptions({
 });
 
 const textFieldMaterialForm = {
-  fullwidth: true,
+  fullWidth: true,
 }
 const textAreaMaterialForm = {
-  fullwidth: true,
-  multiline: true,
+  fullWidth: true,
+  multiLine: true,
   rows: 2
 }
+
+
+
+const FunktionSchema = new SimpleSchema({
+  title: {
+    type: String,
+    label: "Title",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  color: {
+    type: String,
+    label: "Background-Color",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  copy: {
+    type: String,
+    label: "Copy",
+    optional: true,
+    materialForm: textAreaMaterialForm
+  },
+  alignLeft: {
+    type: Boolean,
+    label: "Ausrichtung Links?",
+    defaultValue: true,
+    optional: true,
+    materialForm: {
+      switcher: 'Toggle',
+      fullWidth: false,
+      labelPosition: 'right'
+    }
+  },
+  image: {
+    type: String,
+    optional: true,
+    label: "Image",
+    materialForm: {
+       
+    }
+  }
+});
 
 
 const FunktionenSchema = new SimpleSchema({
@@ -129,6 +171,13 @@ const FunktionenSchema = new SimpleSchema({
   },
 
 
+  funktionen: {
+    type: [FunktionSchema],
+    label: "Funktionen",
+    optional: true
+  },
+
+
   settingshead: {
     type: String,
     label: "Title",
@@ -188,5 +237,5 @@ const FunktionenSchema = new SimpleSchema({
 
 Funktionen.attachSchema ( FunktionenSchema );
 
-export { Funktionen, FunktionenSchema };
+export { Funktionen, FunktionenSchema, FunktionSchema };
 

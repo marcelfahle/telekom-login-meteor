@@ -5,9 +5,12 @@ import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 
 import ContentWrapper from './../components/ContentWrapper.jsx';
+import ReactAutoFormWithImageSelector from './components/ReactAutoFormWithImageSelector';
 import ImageSelector from './uploads/ImageSelector.jsx';
 
 
@@ -17,8 +20,33 @@ export default class FunktionenForm extends React.Component {
     super( props );
 
     this.state = {
-      heroimage: props.heroimage
+      heroimage: "",
+      fImages: []
     }
+  }
+
+
+  funktionEditor( doc, funktion, i ) {
+    return (
+      <Paper zDepth={2} key={i} className="subform funktion-form">
+        <ReactAutoFormWithImageSelector 
+          data={funktion}
+          extras={{doc: doc, index: i}}
+          schema={this.props.funktionSchema._schema}
+          data={funktion}
+          files={this.props.files}
+          fields={['title', 'copy', 'color', 'alignLeft']}
+          handleUpdate={this.props.handleFunktionUpdate}
+        />
+
+        <FlatButton 
+          label="Entfernen"  
+          className="subform__destroy"
+          onClick={() => this.props.handleFunktionRemove(doc._id, i)}
+        />
+        
+      </Paper>
+    )
   }
 
 
@@ -60,25 +88,31 @@ export default class FunktionenForm extends React.Component {
 
 
 
-          <Paper className="form-section">
+
+
+          <Paper className="form-section has-subforms">
             <Toolbar>
-              <ToolbarTitle text="Funktionen" />
+              <ToolbarTitle text={`Funktionen (${this.props.funktionen.length})`} />
             </Toolbar>
-            <ReactAutoForm
-              formClass="autoform"
-              onSubmit={this.props.handleUpdate}
-              schema={this.props.schema._schema}
-              doc={this.props.data}
-              buttonProps={ {disabled: false} }
-              type="update"
-              ref={(form) => { this.funktionenform = form; }}
-              buttonLabel="Speichern"
-              useFields={[
-                'bullet1active', 'bullet1head', 'bullet1color', 'bullet1copy',
-                'bullet2active', 'bullet2head', 'bullet2color', 'bullet2copy'
-              ]}
-            />
+
+            <div className="subform__actions">
+              <RaisedButton 
+                label="Neue Funktion" 
+                onClick={() =>this.props.add(this.props.data, {title:"", copy:"", color:""})} 
+              />
+            </div>
+
+            {
+              (this.props.funktionen && this.props.funktionen.length > 0)
+                ? this.props.funktionen.map( (funktion, i) => {
+                  return this.funktionEditor( this.props.data, funktion, i );
+                  }) :
+                <p className="subform__notice">Bislang wurden keine Funktionen angelegt.</p>
+            }
+            <Paper>
+            </Paper>
           </Paper>
+
 
 
           <Paper className="form-section">

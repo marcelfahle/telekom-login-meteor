@@ -41,10 +41,10 @@ const handleFunktionUpdate = (doc, updatedFields, extraFields) => {
   });
 };
 
-const add = (doc, funktionen) => {
+const add = (doc, funktionen = []) => {
     addFunktion.call({
       docId: doc._id,
-      doc: [...doc.funktionen, funktionen]
+      doc: doc.funktionen ? [...doc.funktionen, funktionen] : [funktionen]
     }, (err, res) => {
       if (err) {
         Bert.alert( err.reason, 'danger', 'growl-top-right' ); 

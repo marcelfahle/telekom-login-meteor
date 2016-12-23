@@ -87,6 +87,23 @@ export default class FunktionenForm extends React.Component {
           </Paper>
 
 
+          <Paper className="form-section">
+            <Toolbar>
+              <ToolbarTitle text="Intro" />
+            </Toolbar>
+            <ReactAutoForm
+              formClass="autoform"
+              onSubmit={this.props.handleUpdate}
+              schema={this.props.schema._schema}
+              doc={this.props.data}
+              buttonProps={ {disabled: false} }
+              type="update"
+              buttonLabel="Speichern"
+              useFields={[
+                'title', 'titlecopy'
+              ]}
+            />
+          </Paper>
 
 
 

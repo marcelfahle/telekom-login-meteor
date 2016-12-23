@@ -111,3 +111,33 @@ input[type='checkbox'] + div {
 }
 
 
+.dashboard {
+  h2 {
+    @include h2;
+    margin-top: 20px; 
+  }
+  h3 {
+    @include h3;
+    margin-top: 20px; 
+  }
+  p, li {
+    @include copy;
+    strong {
+      font-weight: 800;
+    }
+    em {
+      font-style: italic;
+    }
+  }
+  code {
+    font-family: monospace;
+  }
+  pre {
+    margin: 8px 0;
+    padding: 8px;
+    background: #f8f8f8;
+    border-radius: 4px;
+  }
+}
+
+

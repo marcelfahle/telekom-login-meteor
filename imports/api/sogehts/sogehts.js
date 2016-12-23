@@ -42,13 +42,13 @@ const faqCopy = {
 const SogehtsSchema = new SimpleSchema({
   herobold: {
     type: String,
-    label: "Header Bold",
+    label: "Header Bold (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textFieldMaterialForm
   },
   heroregular: {
     type: String,
-    label: "Header Regular",
+    label: "Header Regular (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textAreaMaterialForm
   },
@@ -63,26 +63,26 @@ const SogehtsSchema = new SimpleSchema({
 
   title: {
     type: String,
-    label: "Title",
+    label: "Title (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textFieldMaterialForm
   },
   titlecopy: {
     type: String,
-    label: "Title copy",
+    label: "Title copy (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textAreaMaterialForm
   },
 
 
-  faq1head: Object.assign({}, faqHead, {label: "1 Q"}), 
-  faq1copy: Object.assign({}, faqCopy, {label: "1 A"}),
-  faq2head: Object.assign({}, faqHead, {label: "1 Q"}), 
-  faq2copy: Object.assign({}, faqCopy, {label: "1 A"}),
-  faq3head: Object.assign({}, faqHead, {label: "1 Q"}), 
-  faq3copy: Object.assign({}, faqCopy, {label: "1 A"}),
-  faq4head: Object.assign({}, faqHead, {label: "1 Q"}), 
-  faq4copy: Object.assign({}, faqCopy, {label: "1 A"}),
+  faq1head: Object.assign({}, faqHead, {label: "Frage"}), 
+  faq1copy: Object.assign({}, faqCopy, {label: "Antwort (Markdown erlaubt)"}),
+  faq2head: Object.assign({}, faqHead, {label: "Frage"}), 
+  faq2copy: Object.assign({}, faqCopy, {label: "Antwort (Markdown erlaubt"}),
+  faq3head: Object.assign({}, faqHead, {label: "Frage"}), 
+  faq3copy: Object.assign({}, faqCopy, {label: "Antwort (Markdown erlaubt"}),
+  faq4head: Object.assign({}, faqHead, {label: "Frage"}), 
+  faq4copy: Object.assign({}, faqCopy, {label: "Antwort (Markdown erlaubt"}),
 
 
   showTeaser: {

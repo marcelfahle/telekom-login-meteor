@@ -57,8 +57,8 @@ const HomePage = ({ loading, data } ) => {
           />
         </p>
 
-        <h1 className="title--center">{data.title}</h1>
-        <p className="title__copy">{data.titlecopy}</p>
+        <h1 className="title--center" dangerouslySetInnerHTML={ createMarkup(data.title)} />
+        <p className="title__copy" dangerouslySetInnerHTML={ createMarkup(data.titlecopy)} />
 
 
         <div className="home__intro--keyfeatures">

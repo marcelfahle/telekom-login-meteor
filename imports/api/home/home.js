@@ -31,13 +31,13 @@ const textAreaMaterialForm = {
 const HomeSchema = new SimpleSchema({
   herobold: {
     type: String,
-    label: "Header Bold",
+    label: "Header Bold (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textFieldMaterialForm
   },
   heroregular: {
     type: String,
-    label: "Header Regular",
+    label: "Header Regular (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textAreaMaterialForm
   },
@@ -96,13 +96,13 @@ const HomeSchema = new SimpleSchema({
 
   footerherobold: {
     type: String,
-    label: "Footer Image Bold",
+    label: "Footer Image Text Bold (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textFieldMaterialForm
   },
   footerheroregular: {
     type: String,
-    label: "Footer Image Regular",
+    label: "Footer Image Text Regular (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textAreaMaterialForm
   },
@@ -136,13 +136,13 @@ const HomeSchema = new SimpleSchema({
   },
   title: {
     type: String,
-    label: "Title",
+    label: "Title (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textFieldMaterialForm
   },
   titlecopy: {
     type: String,
-    label: "Title copy",
+    label: "Title copy (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textAreaMaterialForm
   },

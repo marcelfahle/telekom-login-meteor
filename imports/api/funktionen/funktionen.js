@@ -27,13 +27,13 @@ const textAreaMaterialForm = {
 const FunktionSchema = new SimpleSchema({
   title: {
     type: String,
-    label: "Title",
+    label: "Titel",
     optional: true,
     materialForm: textFieldMaterialForm
   },
   color: {
     type: String,
-    label: "Background-Color",
+    label: "Hintergrund-Farbe",
     optional: true,
     materialForm: textFieldMaterialForm
   },
@@ -68,13 +68,13 @@ const FunktionSchema = new SimpleSchema({
 const FunktionenSchema = new SimpleSchema({
   herobold: {
     type: String,
-    label: "Header Bold",
+    label: "Header Bold (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textFieldMaterialForm
   },
   heroregular: {
     type: String,
-    label: "Header Regular",
+    label: "Header Regular (Zeilenumbruch erlaubt)",
     optional: true,
     materialForm: textAreaMaterialForm
   },

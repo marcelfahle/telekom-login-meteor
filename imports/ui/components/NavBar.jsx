@@ -5,7 +5,7 @@ import ContentWrapper from './ContentWrapper.jsx';
 
 import './NavBar.scss';
 
-const NavBar = ({settings, toggleMenu, toggleAppMenu}) => {
+const NavBar = ({settings, toggleMenu, toggleAppMenu, pageName}) => {
   
 
   return (
@@ -15,7 +15,7 @@ const NavBar = ({settings, toggleMenu, toggleAppMenu}) => {
           className="header__nav--menu-toggle"
           onClick={toggleMenu}
           >&nbsp;</button>
-        <p className="header__nav--breadcrumbs">Start</p>
+        <p className="header__nav--breadcrumbs">{pageName}</p>
 
 
         <div className="header__nav--icon-menu">

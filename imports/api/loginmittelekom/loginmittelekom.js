@@ -188,6 +188,13 @@ const LoginMitTelekomSchema = new SimpleSchema({
     materialForm: textFieldMaterialForm
   },
 
+  pagename: {
+    type: String,
+    label: "Page-Name (fuer Navigation)",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+
 
   "updated": {
     type: Date,

@@ -104,6 +104,25 @@ class App extends React.Component {
     }
   }
 
+
+  pageName() {
+    const { pathname } = this.props.location;
+    switch(pathname) {
+      case '/funktionen':
+        return "Funktionen"
+        break;
+      case '/so-gehts':
+        return "So geht's";
+        break;
+      case '/login-mit-telekom':
+        return "Login mit Telekom";
+        break;
+      default: 
+        return "Start";
+    }
+  }
+
+
   render() {
     const headerClasses = classNames({
       'menu': this.state.menu,
@@ -115,6 +134,11 @@ class App extends React.Component {
     if (loading) {
       return <div>Wird geladen...</div>;
     }
+
+
+
+
+
 
     return(
       <div className="viewport" onClick={this.clickOnViewport}>
@@ -128,11 +152,14 @@ class App extends React.Component {
         <header className={headerClasses}>
           <BrandBar />
           <NavBar 
+            pageName={this.pageName()}
             settings={settings}
             toggleMenu={this.toggleMenu} 
             toggleAppMenu={this.toggleAppMenu} />
           
-          <AppPanelContainer data={ this.state.dienste } />
+          <ContentWrapper>
+            <AppPanelContainer data={ this.state.dienste } />
+          </ContentWrapper>
         </header>
         <main>
           {this.props.children && React.cloneElement(this.props.children, {

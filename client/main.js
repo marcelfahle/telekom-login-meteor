@@ -38,7 +38,7 @@ Meteor.startup( () => {
   render(
     <Router onUpdate={ () => onUpdate() } history={ browserHistory }>
       <Route path="/"  component={ AppContainer }>
-        <IndexRoute component={ HomeContainer } />
+        <IndexRoute pagename="Start" component={ HomeContainer } />
         <Route path="/funktionen" component={ FunktionenContainer } />
         <Route path="/so-gehts" component={ SoGehtsContainer } />
         <Route path="/dienste-uebersicht" component={ Dienste } />

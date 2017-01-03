@@ -190,22 +190,6 @@ class SettingsPage extends React.Component {
           </Paper>
 
 
-          <Paper className="form-section">
-            <Toolbar>
-              <ToolbarTitle text="SEO (Site)"  />
-            </Toolbar>
-            <ReactAutoForm
-              onSubmit={this.props.handleUpdate}
-              buttonProps={ {disabled: false} }
-              schema={this.props.schema._schema}
-              doc={this.props.data}
-              type="update"
-              buttonLabel="Speichern"
-              useFields={[ 
-                'seotitle', 'seodescription'
-              ]}
-            />
-          </Paper>
 
 
         </div>

@@ -48,7 +48,7 @@ const LoginMitTelekomPage = ({ loading, data } ) => {
         <div className="home__intro--keyfeatures">
           <div className="home__intro--keyfeature">
             <div className="keyfeature-imgwrapper">
-              <img src="/images/home-feature1-bequem.svg" 
+              <img src={ data.bullet1image } 
                 alt={data.bullet1head} />
             </div>
             <h2>{data.bullet1head}</h2>
@@ -56,7 +56,7 @@ const LoginMitTelekomPage = ({ loading, data } ) => {
           </div>
           <div className="home__intro--keyfeature">
             <div className="keyfeature-imgwrapper">
-              <img src="/images/login-icon-sicher.svg" 
+              <img src={ data.bullet2image } 
                 alt={data.bullet2head} />
             </div>
             <h2>{data.bullet2head}</h2>
@@ -64,7 +64,8 @@ const LoginMitTelekomPage = ({ loading, data } ) => {
           </div>
           <div className="home__intro--keyfeature">
             <div className="keyfeature-imgwrapper">
-              <img src="/images/login-icon-sicher2.svg" alt={data.bullet3head} />
+              <img src={ data.bullet3image } 
+                alt={data.bullet3head} />
             </div>
             <h2>{data.bullet3head}</h2>
             <p>{data.bullet3copy}</p>
@@ -90,19 +91,23 @@ const LoginMitTelekomPage = ({ loading, data } ) => {
 
 
 
-      <Hero 
-        img={ data.footerheroimage }
-        className="last-action-hero"
-        aspectClass="aspect16-7 last-hero"
-        >
-        <p><span dangerouslySetInnerHTML={ createMarkup( data.footerherobold ) } /></p>
-        <p dangerouslySetInnerHTML={ createMarkup( data.footerheroregular ) } />
-        {
-          data.footerherohascta
-            ? <p className="hero-cta"><Link to={data.footerheroctaurl} className="button button-gray">{data.footerheroctalabel}</Link></p>
-            : ''
-        }
-      </Hero>
+      {
+        (data.footerheroactive) ?
+          <Hero 
+            img={ data.footerheroimage }
+            className="last-action-hero"
+            aspectClass="aspect16-7 last-hero"
+            >
+            <p><span dangerouslySetInnerHTML={ createMarkup( data.footerherobold ) } /></p>
+            <p dangerouslySetInnerHTML={ createMarkup( data.footerheroregular ) } />
+            {
+              data.footerherohascta
+                ? <p className="hero-cta"><Link to={data.footerheroctaurl} className="button button-gray">{data.footerheroctalabel}</Link></p>
+                : ''
+            }
+          </Hero> :
+          ''
+      }
 
     </div>
   )

@@ -21,6 +21,9 @@ export default class LoginMitTelekomForm extends React.Component {
     this.state = {
       heroimage: props.heroimage, 
       partnerslogos: props.partnerslogos, 
+      bullet1image: props.bullet1image,
+      bullet2image: props.bullet2image,
+      bullet3image: props.bullet3image,
       footerheroimage: props.footerheroimage
     }
   }
@@ -62,11 +65,9 @@ export default class LoginMitTelekomForm extends React.Component {
           </Paper>
 
 
-
-
           <Paper className="form-section">
             <Toolbar>
-              <ToolbarTitle text="Key Features" />
+              <ToolbarTitle text="Intro" />
             </Toolbar>
             <ReactAutoForm
               onSubmit={this.props.handleUpdate}
@@ -75,9 +76,50 @@ export default class LoginMitTelekomForm extends React.Component {
               doc={this.props.data}
               type="update"
               buttonLabel="Speichern"
-              useFields={['title', 'titlecopy', 'bullet1head', 'bullet1copy', 'bullet2head', 'bullet2copy', 'bullet3head', 'bullet3copy']}
+              useFields={['title', 'titlecopy']}
             />
           </Paper>
+
+
+          {
+            [1,2,3].map( i => {
+              const extraObj = {};
+              extraObj[`bullet${i}image`] = this.state[`bullet${i}image`];
+              return (
+                <div>
+                  <Paper className="form-section">
+                    <Toolbar>
+                      <ToolbarTitle text={`Key Feature ${i}`} />
+                    </Toolbar>
+                    <ReactAutoForm
+                      formClass="autoform has-image-selector"
+                      onSubmit={this.props.handleUpdate}
+                      onSubmitExtra={ extraObj }
+                      buttonProps={ {disabled: false} }
+                      schema={this.props.schema._schema}
+                      doc={this.props.data}
+                      type="update"
+                      buttonLabel="Speichern"
+                      useFields={[
+                        `bullet${i}head`, `bullet${i}copy`
+                      ]}
+                    />
+                  </Paper>
+                  <ImageSelector 
+                    files={ this.props.files } 
+                    current={ this.state[`bullet${i}image`] || this.props.data[`bullet${i}image`]}
+                    setField={ link => {
+                        const stateObj = {};
+                        stateObj[`bullet${i}image`] = link;
+                        this.setState( stateObj );
+                      } 
+                    } 
+                  />
+                </div>
+              )
+
+            })
+          }
 
 
 
@@ -125,7 +167,7 @@ export default class LoginMitTelekomForm extends React.Component {
               doc={this.props.data}
               type="update"
               buttonLabel="Speichern"
-              useFields={['footerherobold', 'footerheroregular', 'footerherohascta', 'footerheroctalabel', 'footerheroctaurl']}
+              useFields={['footerheroactive', 'footerherobold', 'footerheroregular', 'footerherohascta', 'footerheroctalabel', 'footerheroctaurl']}
             />
             <ImageSelector 
               files={ this.props.files } 

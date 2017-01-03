@@ -20,7 +20,11 @@ export default class HomeForm extends React.Component {
 
     this.state = {
       heroimage: props.heroimage, 
-      footerheroimage: props.footerheroimage
+      footerheroimage: props.footerheroimage,
+      bullet1image: props.bullet1image,
+      bullet2image: props.bullet2image,
+      bullet3image: props.bullet3image,
+      servicesctaimage: props.servicesctaimage
     }
   }
 
@@ -97,7 +101,7 @@ export default class HomeForm extends React.Component {
 
           <Paper className="form-section">
             <Toolbar>
-              <ToolbarTitle text="Key Features" />
+              <ToolbarTitle text="Key Features Einstellungen" />
             </Toolbar>
             <ReactAutoForm
               onSubmit={this.props.handleUpdate}
@@ -106,22 +110,76 @@ export default class HomeForm extends React.Component {
               doc={this.props.data}
               type="update"
               buttonLabel="Speichern"
-              useFields={['title', 'titlecopy', 'bullet1head', 'bullet1copy', 'bullet2head', 'bullet2copy', 'bullet3head', 'bullet3copy', 'bulletctalabel', 'bulletctaurl']}
+              useFields={[
+                'title', 'titlecopy', 
+                'bulletctalabel', 'bulletctaurl'
+              ]}
             />
           </Paper>
+
+          {
+            [1,2,3].map( i => {
+              const extraObj = {};
+              extraObj[`bullet${i}image`] = this.state[`bullet${i}image`];
+              return (
+                <div>
+                  <Paper className="form-section">
+                    <Toolbar>
+                      <ToolbarTitle text={`Key Feature ${i}`} />
+                    </Toolbar>
+                    <ReactAutoForm
+                      formClass="autoform has-image-selector"
+                      onSubmit={this.props.handleUpdate}
+                      onSubmitExtra={ extraObj }
+                      buttonProps={ {disabled: false} }
+                      schema={this.props.schema._schema}
+                      doc={this.props.data}
+                      type="update"
+                      buttonLabel="Speichern"
+                      useFields={[
+                        `bullet${i}head`, `bullet${i}copy`
+                      ]}
+                    />
+                  </Paper>
+                  <ImageSelector 
+                    files={ this.props.files } 
+                    current={ this.state[`bullet${i}image`] || this.props.data[`bullet${i}image`]}
+                    setField={ link => {
+                        const stateObj = {};
+                        stateObj[`bullet${i}image`] = link;
+                        this.setState( stateObj );
+                      } 
+                    } 
+                  />
+                </div>
+              )
+
+            })
+          }
+
+
+
+
 
           <Paper className="form-section">
             <Toolbar>
               <ToolbarTitle text="Services Teaser" />
             </Toolbar>
             <ReactAutoForm
+              formClass="autoform has-image-selector"
               onSubmit={this.props.handleUpdate}
+              onSubmitExtra={{servicesctaimage: this.state.servicesctaimage}}
               buttonProps={ {disabled: false} }
               schema={this.props.schema._schema}
               doc={this.props.data}
               type="update"
               buttonLabel="Speichern"
               useFields={['serviceshead', 'servicescopy', 'servicesctalabel', 'servicesctaurl']}
+            />
+            <ImageSelector 
+              files={ this.props.files } 
+              current={ this.state.servicesctaimage || this.props.data.servicesctaimage }
+              setField={ link => this.setState({ servicesctaimage: link} ) } 
             />
           </Paper>
 

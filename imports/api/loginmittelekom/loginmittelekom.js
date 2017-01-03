@@ -85,6 +85,14 @@ const LoginMitTelekomSchema = new SimpleSchema({
   
 
 
+  footerheroactive: {
+    type: Boolean,
+    label: "Footer Hero Aktiv?",
+    optional: true,
+    materialForm: {
+      switcher: 'Checkbox'
+    }
+  },
   footerherobold: {
     type: String,
     label: "Footer Image Text Bold (Zeilenumbruch erlaubt)",
@@ -149,6 +157,12 @@ const LoginMitTelekomSchema = new SimpleSchema({
     optional: true,
     materialForm: textAreaMaterialForm
   },
+  bullet1image: {
+    type: String,
+    label: "Key-Feature 1 Bild",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
   bullet2head: {
     type: String,
     label: "Key-Feature 2 Title",
@@ -161,6 +175,12 @@ const LoginMitTelekomSchema = new SimpleSchema({
     optional: true,
     materialForm: textAreaMaterialForm
   },
+  bullet2image: {
+    type: String,
+    label: "Key-Feature 2 Bild",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
   bullet3head: {
     type: String,
     label: "Key-Feature 3 Title",
@@ -172,6 +192,12 @@ const LoginMitTelekomSchema = new SimpleSchema({
     label: "Key-Feature 3 Copy",
     optional: true,
     materialForm: textAreaMaterialForm
+  },
+  bullet3image: {
+    type: String,
+    label: "Key-Feature 3 Bild",
+    optional: true,
+    materialForm: textFieldMaterialForm
   },
 
 

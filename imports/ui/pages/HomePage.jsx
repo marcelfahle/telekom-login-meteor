@@ -64,7 +64,7 @@ const HomePage = ({ loading, data } ) => {
         <div className="home__intro--keyfeatures">
           <div className="home__intro--keyfeature">
             <div className="keyfeature-imgwrapper">
-              <img src="/images/home-feature1-bequem.svg" 
+              <img src={data.bullet1image} 
                 alt={data.bullet1head} />
             </div>
             <h2>{data.bullet1head}</h2>
@@ -72,7 +72,7 @@ const HomePage = ({ loading, data } ) => {
           </div>
           <div className="home__intro--keyfeature">
             <div className="keyfeature-imgwrapper">
-              <img src="/images/home-feature2-flexibel.svg" 
+              <img src={data.bullet2image} 
                 alt={data.bullet2head} />
             </div>
             <h2>{data.bullet2head}</h2>
@@ -80,7 +80,7 @@ const HomePage = ({ loading, data } ) => {
           </div>
           <div className="home__intro--keyfeature">
             <div className="keyfeature-imgwrapper">
-              <img src="/images/home-feature3-sicher.svg" 
+              <img src={data.bullet3image} 
                 alt={data.bullet3head} />
             </div>
             <h2>{data.bullet3head}</h2>
@@ -102,8 +102,8 @@ const HomePage = ({ loading, data } ) => {
             {data.servicescopy}
           </p>
           <div className="services__intro-imgwrapper">
-            <img src="/images/home-services-intro.png" 
-              alt="Alle Telekom Dienste im Überblick" 
+            <img src={data.servicesctaimage} 
+              alt={data.serviceshead} 
             />
           </div>
           <div className="services_cta cta">

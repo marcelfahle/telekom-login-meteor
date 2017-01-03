@@ -158,6 +158,12 @@ const HomeSchema = new SimpleSchema({
     optional: true,
     materialForm: textAreaMaterialForm
   },
+  bullet1image: {
+    type: String,
+    label: "Key-Feature 1 Bild",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
   bullet2head: {
     type: String,
     label: "Key-Feature 2 Title",
@@ -170,6 +176,12 @@ const HomeSchema = new SimpleSchema({
     optional: true,
     materialForm: textAreaMaterialForm
   },
+  bullet2image: {
+    type: String,
+    label: "Key-Feature 2 Bild",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
   bullet3head: {
     type: String,
     label: "Key-Feature 3 Title",
@@ -181,6 +193,12 @@ const HomeSchema = new SimpleSchema({
     label: "Key-Feature 3 Copy",
     optional: true,
     materialForm: textAreaMaterialForm
+  },
+  bullet3image: {
+    type: String,
+    label: "Key-Feature 3 Bild",
+    optional: true,
+    materialForm: textFieldMaterialForm
   },
   bulletctalabel: {
     type: String,
@@ -217,6 +235,12 @@ const HomeSchema = new SimpleSchema({
   servicesctaurl: {
     type: String,
     label: "Dienste Call-To-Action URL",
+    optional: true,
+    materialForm: textAreaMaterialForm
+  },
+  servicesctaimage: {
+    type: String,
+    label: "Dienste Bild",
     optional: true,
     materialForm: textAreaMaterialForm
   },

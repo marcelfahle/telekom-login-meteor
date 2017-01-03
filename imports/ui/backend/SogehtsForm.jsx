@@ -48,7 +48,7 @@ export default class SogehtsForm extends React.Component {
               type="update"
               ref={(form) => { this.headerform = form; }}
               buttonLabel="Speichern"
-              useFields={['herobold', 'heroregular', 'title', 'titlecopy']}
+              useFields={['herobold', 'heroregular' ]}
             />
 
             <ImageSelector 
@@ -58,6 +58,27 @@ export default class SogehtsForm extends React.Component {
             />
             
           </Paper>
+
+
+          <Paper className="form-section">
+            <Toolbar>
+              <ToolbarTitle text="Intro" />
+            </Toolbar>
+            <ReactAutoForm
+              formClass="autoform"
+              onSubmit={this.props.handleUpdate}
+              schema={this.props.schema._schema}
+              doc={this.props.data}
+              buttonProps={ {disabled: false} }
+              type="update"
+              buttonLabel="Speichern"
+              useFields={[
+                'title', 'titlecopy',
+              ]}
+            />
+          </Paper>
+
+
 
 
           <Paper className="form-section">

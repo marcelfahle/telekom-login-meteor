@@ -30,7 +30,7 @@ const Dashboard = () => (
       <p>
         1. Erster Listeneintrag<br/>
         2. Zweiter Listeneintrag<br/>
-        3. Zweiter Listeneintrag<br/>
+        3. Dritter Listeneintrag<br/>
       </p>
     </code></pre>
 

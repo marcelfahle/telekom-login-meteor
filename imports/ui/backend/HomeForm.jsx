@@ -106,7 +106,7 @@ export default class HomeForm extends React.Component {
               doc={this.props.data}
               type="update"
               buttonLabel="Speichern"
-              useFields={['title', 'titlecopy', 'bullet1head', 'bullet1copy', 'bullet2head', 'bullet2copy', 'bullet3head', 'bullet3copy']}
+              useFields={['title', 'titlecopy', 'bullet1head', 'bullet1copy', 'bullet2head', 'bullet2copy', 'bullet3head', 'bullet3copy', 'bulletctalabel', 'bulletctaurl']}
             />
           </Paper>
 
@@ -121,7 +121,7 @@ export default class HomeForm extends React.Component {
               doc={this.props.data}
               type="update"
               buttonLabel="Speichern"
-              useFields={['serviceshead', 'servicescopy']}
+              useFields={['serviceshead', 'servicescopy', 'servicesctalabel', 'servicesctaurl']}
             />
           </Paper>
 

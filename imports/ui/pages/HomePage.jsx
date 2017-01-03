@@ -88,7 +88,9 @@ const HomePage = ({ loading, data } ) => {
           </div>
         </div>
         <div className="keyfeatures_cta cta">
-          <Link to="/funktionen" className="button button-gray">Alle Funktionen entdecken</Link>
+          <Link to={data.bulletctaurl} className="button button-gray">
+            {data.bulletctalabel}
+          </Link>
         </div>
 
 
@@ -105,7 +107,9 @@ const HomePage = ({ loading, data } ) => {
             />
           </div>
           <div className="services_cta cta">
-            <button className="button button-gray">Zu den Diensten</button>
+            <a href={data.servicesctaurl} className="button button-gray">
+              {data.servicesctalabel}
+            </a>
           </div>
           
         </div>

@@ -137,8 +137,9 @@ export default class FunktionenForm extends React.Component {
               <ToolbarTitle text="Login Funktion" />
             </Toolbar>
             <ReactAutoForm
-              formClass="autoform"
+              formClass="autoform has-image-selector"
               onSubmit={this.props.handleUpdate}
+              onSubmitExtra={{settingsimg: this.state.settingsimg}}
               schema={this.props.schema._schema}
               doc={this.props.data}
               buttonProps={ {disabled: false} }
@@ -147,6 +148,11 @@ export default class FunktionenForm extends React.Component {
               useFields={[
                 'settingshead', 'settingscopy', 'settingsctalabel', 'settingsctaurl'
               ]}
+            />
+            <ImageSelector 
+              files={ this.props.files } 
+              current={ this.state.settingsimg|| this.props.data.settingsimg }
+              setField={ link => this.setState({ settingsimg: link} ) } 
             />
           </Paper>
 

@@ -4,6 +4,9 @@ import { Link } from 'react-router';
 import './Footer.scss';
 
 
+
+const linknum = [0,1,2,3,4,5]
+
 const Footer = ({settings}) => (
   <footer>
     <nav className="footer__nav">
@@ -22,37 +25,18 @@ const Footer = ({settings}) => (
       <h4>Folgen Sie uns im Social Web:</h4>
       <nav>
         <ul>
-          { settings.showlinkfb ?
-            <li>
-              <a href={settings.linkfb || '#' }>
-                <img src="/images/footer-fb.svg" alt="Facebook" />
-              </a>
-            </li> :
-              ''
-          }
-          { settings.showlinktw ?
-          <li>
-            <a href={settings.linktw || '#' }>
-              <img src="/images/footer-twitter.svg" alt="Twitter" />
-            </a>
-          </li> :
-              ''
-          }
-          { settings.showlinkgoogle ?
-            <li>
-              <a href={settings.linkgoogle || '#' }>
-                <img src="/images/footer-google.svg" alt="google plus" />
-              </a>
-            </li> :
-              ''
-          }
-          { settings.showlinkshare ?
-            <li>
-              <a href={settings.linkshare || '#' }>
-                <img src="/images/footer-share.svg" alt="Share" />
-              </a>
-            </li> :
-              ''
+          {
+            [1,2,3,4,5,6].map( i => {
+              return(
+                (settings[`sociallink${i}active`])?
+                  <li>
+                    <a href={settings[`sociallink${i}url`] }>
+                      <img src={settings[`sociallink${i}img`]} alt={settings[`sociallink${i}`]} />
+                    </a>
+                  </li> :
+                  ''
+              )
+            })
           }
         </ul>
       </nav>
@@ -64,11 +48,18 @@ const Footer = ({settings}) => (
       </p>
       <nav>
         <ul>
-          {/*<li><a href="#">Geschäftskunden</a></li>*/}
-          <li><a href={settings.linktelekomhilft || '#'} target="_blank">Telekom Hilft Community</a></li>
-          {/*<li><a href="#">FAQ-Liste</a></li>*/}
-          <li><a href={settings.linkimpressum || ''} target="_blank">Impressum</a></li>
-          <li><a href={settings.linkdatenschutz || '' }  target="_blank">Datenschutz</a></li>
+
+          {
+            [0,1,2,3,4,5].map( i => {
+              const url = settings[`link${i}url`];
+              const label = settings[`link${i}`];
+              const window = settings[`link${i}target`] ? "_blank" : "_self";
+              return (
+                (settings[`link${i}active`]) ? <li><a href={url} target={window}>{label}</a></li> : ''
+              )
+            })  
+          }    
+
         </ul>
       </nav>
     </div>

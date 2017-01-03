@@ -49,7 +49,7 @@ const FunktionenPage = ({loading, data}) => {
 
       <ContentWrapper className="login-settings">
         <div className="login-settings__img">
-          <img src="/images/login-settings.jpg" alt="Login Einstellungen: Ihr Telekom Login Kontrollzentrum" />
+          <img src={ data.settingsimg } alt={ data.settingshead } />
         </div>
         <div className="login-settings__copy">
           <h2>{ data.settingshead }</h2>
@@ -59,7 +59,6 @@ const FunktionenPage = ({loading, data}) => {
           </p>
         </div>
       </ContentWrapper>
-
       
     </div>
   )

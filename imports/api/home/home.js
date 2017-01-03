@@ -182,6 +182,19 @@ const HomeSchema = new SimpleSchema({
     optional: true,
     materialForm: textAreaMaterialForm
   },
+  bulletctalabel: {
+    type: String,
+    label: "Key-Features Call-to-Action Label",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  bulletctaurl: {
+    type: String,
+    label: "Key-Features Call-to-Action URL",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
+  
 
   serviceshead: {
     type: String,
@@ -192,6 +205,18 @@ const HomeSchema = new SimpleSchema({
   servicescopy: {
     type: String,
     label: "Dienste Copy",
+    optional: true,
+    materialForm: textAreaMaterialForm
+  },
+  servicesctalabel: {
+    type: String,
+    label: "Dienste Call-To-Action Label",
+    optional: true,
+    materialForm: textAreaMaterialForm
+  },
+  servicesctaurl: {
+    type: String,
+    label: "Dienste Call-To-Action URL",
     optional: true,
     materialForm: textAreaMaterialForm
   },

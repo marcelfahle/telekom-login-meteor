@@ -57,28 +57,32 @@ const SogehtsPage = ({loading, data}) => {
         </ul>
       </ContentWrapper>
 
-      <ContentWrapper className="content-wrapper-full services__slider">
-        <ul>
-          <li>
-            <h2 className="title--center">Alle Telekom Dienste im Überblick</h2>
-            <p className="title__copy">
-              Ganz egal welchen unserer Dienste Sie nutzen möchten:<br/>
-              Mit der Übersicht sind Sie schneller am Ziel – und eingeloggt.
-              <br/><br/>
-              <a href="//telekom.com">Zu den Diensten</a>
-            </p>
-            <img src="/images/services01.png" alt="Alle Telekom Dienste im Überblick" />
-          </li>
-        </ul>
-        <div className="services__slider-controls">
-          <a className="slider__controls--prev" href="#">
-            <img src="/images/slider-trigger.svg" alt="Previous" />
-          </a>
-          <a className="slider__controls--next" href="#">
-            <img src="/images/slider-trigger.svg" alt="Next" />
-          </a>
-        </div>
-      </ContentWrapper>
+      {
+        data.showTeaser?
+          <ContentWrapper className="content-wrapper-full services__slider">
+            <ul>
+              <li>
+                <h2 className="title--center">{data.teaserTitle}</h2>
+                <p className="title__copy" dangerouslySetInnerHTML={ createMarkup(data.teaserCopy) }>
+                </p>
+                <p>
+                  <a href={data.teaserctaurl}>{data.teaserctalabel}</a>
+                </p>
+                <img src="/images/services01.png" alt="Alle Telekom Dienste im Überblick" />
+              </li>
+            </ul>
+            <div className="services__slider-controls">
+              <a className="slider__controls--prev" href="#">
+                <img src="/images/slider-trigger.svg" alt="Previous" />
+              </a>
+              <a className="slider__controls--next" href="#">
+                <img src="/images/slider-trigger.svg" alt="Next" />
+              </a>
+            </div>
+          </ContentWrapper> :
+          ''
+          
+      }
 
 
 

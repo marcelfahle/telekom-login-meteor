@@ -13,7 +13,7 @@ export const UserFiles = new FilesCollection({
   allowClientCode: false, // Disallow removal from client
   onBeforeUpload: (file) => {
     //console.log('onBeforeUpload.... server or client', Meteor.settings.storagePath);
-    if ( file.size <= 10485760 && /png|jpg|jpeg/i.test(file.extension)) {
+    if ( file.size <= 10485760 && /png|svg|jpg|jpeg/i.test(file.extension)) {
       return true;
     } else {
       return 'Maximum file size exceeeded. Files should be 10MB or less.';

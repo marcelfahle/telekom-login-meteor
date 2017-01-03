@@ -202,6 +202,12 @@ const FunktionenSchema = new SimpleSchema({
     optional: true,
     materialForm: textFieldMaterialForm
   },
+  settingsimg: {
+    type: String,
+    label: "Image",
+    optional: true,
+    materialForm: textFieldMaterialForm
+  },
 
 
 

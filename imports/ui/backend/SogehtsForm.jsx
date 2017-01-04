@@ -168,29 +168,6 @@ export default class SogehtsForm extends React.Component {
 
 
 
-
-          <Paper className="form-section">
-            <Toolbar>
-              <ToolbarTitle text="Header" />
-            </Toolbar>
-            <ReactAutoForm
-              formClass="autoform"
-              onSubmit={this.props.handleUpdate}
-              schema={this.props.schema._schema}
-              doc={this.props.data}
-              buttonProps={ {disabled: false} }
-              type="update"
-              buttonLabel="Speichern"
-              useFields={[
-                'faq1head', 'faq1copy',
-                'faq2head', 'faq2copy',
-                'faq3head', 'faq3copy',
-                'faq4head', 'faq4copy',
-              ]}
-            />
-          </Paper>
-
-
           <Paper className="form-section">
             <Toolbar>
               <ToolbarTitle text="Teaser" />

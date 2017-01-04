@@ -169,28 +169,6 @@ class SettingsPage extends React.Component {
           </Paper>
 
 
-          <Paper className="form-section">
-            <Toolbar>
-              <ToolbarTitle text="Social" />
-            </Toolbar>
-            <ReactAutoForm
-              onSubmit={this.props.handleUpdate}
-              buttonProps={ {disabled: false} }
-              schema={this.props.schema._schema}
-              doc={this.props.data}
-              type="update"
-              buttonLabel="Speichern"
-              useFields={[ 
-                'linkfb', 'showlinkfb',
-                'linktw', 'showlinktw', 
-                'linkgoogle', 'showlinkgoogle',
-                'linkshare', 'showlinkshare'
-              ]}
-            />
-          </Paper>
-
-
-
 
         </div>
       </ContentWrapper>

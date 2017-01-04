@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 
+import { FaqsSchema } from './../faqs/faqs';
 
 const Sogehts = new Mongo.Collection('sogehts');
 
@@ -74,6 +75,12 @@ const SogehtsSchema = new SimpleSchema({
     materialForm: textAreaMaterialForm
   },
 
+
+  faqs: {
+    type: [FaqsSchema],
+    label: "Faqs",
+    optional: true
+  },
 
   faq1head: Object.assign({}, faqHead, {label: "Frage"}), 
   faq1copy: Object.assign({}, faqCopy, {label: "Antwort (Markdown erlaubt)"}),

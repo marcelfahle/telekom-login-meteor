@@ -3,7 +3,6 @@
 
 
 .service {
-  display: flex;
   margin-bottom: rem(56px);
   position: relative;
 
@@ -18,6 +17,10 @@
     }
   }
 }
+.service__contents {
+  display: flex;
+  width: 100%;
+}
 .service__icon--wrapper {
   width: 51px;
   margin-right: rem(10px);
@@ -29,7 +32,7 @@
 
 }
 .service__info {
-  width: 100%;
+  width: calc(100% - 51px);
   h3 {
     @include h1-underlined;
     margin-bottom: rem(10px);
@@ -43,9 +46,11 @@
   p { font-size: 1rem; }
 }
 .service__info + .actions {
-  position: absolute;
-  top: 58px;
-  left: 0;
+  width: 100%;
+   //flex-grow: 1;
+  //position: absolute;
+  //top: 58px;
+  //left: 0;
   i { 
     color: $border-color3;
   }

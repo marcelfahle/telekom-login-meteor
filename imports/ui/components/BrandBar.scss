@@ -25,7 +25,8 @@
 .header__brand--claim {
   position: absolute;
   display: inline-block;
-  width: 196px;
+  text-align: right;
+  //width: 196px;
   height: 18px;
   right: 0;
   @include content-padding(right);

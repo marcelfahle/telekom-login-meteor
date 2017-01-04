@@ -49,10 +49,10 @@ const SogehtsPage = ({loading, data}) => {
 
       <ContentWrapper className="sogehts__faqs">
         <ul className="faqs">
-          <Faq body={data.faq1copy} head={data.faq1head} />
-          <Faq body={data.faq2copy} head={data.faq2head} />
-          <Faq body={data.faq3copy} head={data.faq3head} />
-          <Faq body={data.faq4copy} head={data.faq4head} />
+          {
+            data.faqs.map( faq => <Faq body={faq.copy} head={faq.head} />)
+          }
+
 
         </ul>
       </ContentWrapper>
